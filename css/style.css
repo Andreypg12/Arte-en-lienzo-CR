@@ -1,0 +1,62 @@
+:root {
+    --color-primario: rgb(154, 158, 141);
+    --color-secundario: rgb(196, 138, 98);
+    --color-1: rgb(130, 86, 61);
+    --color-2: rgb(130, 146, 146);
+    --color-3: rgb(212, 186, 161);
+    --color-4: rgb(239, 226, 220);
+    --color-5: rgb(229, 191, 155);
+    --color-6: rgb(113, 126, 98);
+    --color-7: rgb(184, 191, 175);
+
+    --fontTitle: 'Playfair Display', serif;
+    --fontText: 'Cormorant Garamond', serif;
+
+}
+
+.colorNavbar {
+    background-color: var(--color-6);
+}
+
+.titulo-Principal {
+    font-family: 'Playfair Display', serif;
+}
+
+.texto-cuerpo {
+    font-family: 'Quicksand', sans-serif;
+    color: white !important;
+    font-size: 20px !important;
+}
+
+.colorUltimoBoton {
+    background-color: rgb(79, 90, 66) !important;
+}
+
+
+
+
+
+
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1);
+    /* Blanco → Negro (el ícono) */
+    background-color: rgba(211, 241, 176, 0.3);
+    border-radius: 50%;
+    /* forma circular */
+    padding: 30px;
+    /* espacio alrededor del ícono */
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+
+
