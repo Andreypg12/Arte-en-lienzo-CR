@@ -11,12 +11,16 @@
 
     --fontTitle: 'Playfair Display', serif;
     --fontText: 'Cormorant Garamond', serif;
-
 }
+
 
 .colorNavbar {
     background-color: var(--color-6);
+    position: sticky;
+    top: 0;
+    z-index: 1030;
 }
+
 
 .titulo-Principal {
     font-family: 'Playfair Display', serif;
@@ -24,8 +28,16 @@
 
 .texto-cuerpo {
     font-family: 'Quicksand', sans-serif;
-    color: white !important;
+    color: #dfdfdf !important;
     font-size: 20px !important;
+    padding: 10px 20px !important;
+    transition: all 0.5s ease !important;
+    border-radius: 5px;
+}
+
+.texto-cuerpo:hover {
+    background-color: rgb(126, 146, 102);
+    color: white !important;
 }
 
 .colorUltimoBoton {
@@ -33,30 +45,15 @@
 }
 
 
-
-
-
-
-
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     filter: invert(1);
     /* Blanco → Negro (el ícono) */
-    background-color: rgba(211, 241, 176, 0.3);
+    background-color: rgba(211, 241, 176, 0.2);
     border-radius: 50%;
     /* forma circular */
-    padding: 30px;
-    /* espacio alrededor del ícono */
-    box-sizing: border-box;
+    padding: 20px;
+
+    box-shadow: 0 0 0 10px rgba(211, 241, 176, 0.2);
+
 }
-
-
-
-
-
-
-
-
-
-
-
