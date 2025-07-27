@@ -57,3 +57,15 @@
     box-shadow: 0 0 0 10px rgba(211, 241, 176, 0.2);
 
 }
+
+
+/* Parte del Breadcrumb inicio*/
+.breadcrumb-box {
+
+    height: 80px;
+    font-size: 20px;
+    align-items: center;
+    /* border: 2px solid black; */
+}
+
+/* Parte del Breadcrumb fin*/
