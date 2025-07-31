@@ -1,16 +1,26 @@
 :root {
     --color-primario: rgb(154, 158, 141);
+    /* Tono neutro suave */
     --color-secundario: rgb(196, 138, 98);
-    --color-1: rgb(130, 86, 61);
+    /* Terracota cálido */
+    --color-1: rgb(117, 76, 52);
+    /* Marrón artístico */
     --color-2: rgb(130, 146, 146);
+    /* Verde grisáceo */
     --color-3: rgb(212, 186, 161);
+    /* Beige elegante */
     --color-4: rgb(239, 226, 220);
+    /* Rosa pálido */
     --color-5: rgb(229, 191, 155);
+    /* Melocotón suave */
     --color-6: rgb(113, 126, 98);
+    /* Verde oliva oscuro */
     --color-7: rgb(184, 191, 175);
+    /* Gris cálido */
 
     --fontTitle: 'Playfair Display', serif;
     --fontText: 'Cormorant Garamond', serif;
+
 }
 
 
@@ -20,12 +30,15 @@
     top: 0;
     z-index: 1030;
 }
+.dropdown-item {
+    color: var(--color-1) !important;
+}
 
 
 /*Botones fix whatsapp e instagram*/
 .btn-float {
     position: fixed;
-    right: 20px;          /* Distancia del borde derecho */
+    right: 20px;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -47,17 +60,13 @@
     transform: scale(1.1);
 }
 
-/* Posiciones separadas */
 .whatsapp {
-    bottom: 90px;        /* WhatsApp más arriba */
+    bottom: 90px;
 }
 
 .instagram {
-    bottom: 20px;        /* Instagram más abajo */
+    bottom: 20px;        
 }
-
-
-
 
 /*Fin de botones fix*/
 
@@ -411,6 +420,9 @@
 }
 
 /*Fin de seccion de cartas*/
+
+
+
 
 
 /*Footer*/

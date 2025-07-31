@@ -1,0 +1,136 @@
+:root {
+    --color-primario: rgb(154, 158, 141);
+    /* Tono neutro suave */
+    --color-secundario: rgb(196, 138, 98);
+    /* Terracota cálido */
+    --color-1: rgb(117, 76, 52);
+    /* Marrón artístico */
+    --color-2: rgb(130, 146, 146);
+    /* Verde grisáceo */
+    --color-3: rgb(212, 186, 161);
+    /* Beige elegante */
+    --color-4: rgb(239, 226, 220);
+    /* Rosa pálido */
+    --color-5: rgb(229, 191, 155);
+    /* Melocotón suave */
+    --color-6: rgb(113, 126, 98);
+    /* Verde oliva oscuro */
+    --color-7: rgb(184, 191, 175);
+    /* Gris cálido */
+
+    --fontTitle: 'Playfair Display', serif;
+    --fontText: 'Cormorant Garamond', serif;
+
+}
+
+
+body {
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+    background: #f8f8f8;
+    color: #333;
+}
+
+
+
+
+/*Navbar */
+
+.colorNavbar {
+    background-color: var(--color-6);
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+}
+
+.texto-cuerpo {
+    font-family: 'Quicksand', sans-serif;
+    color: #ffffff !important;
+    font-size: 20px !important;
+    padding: 10px 20px !important;
+    transition: all 0.5s ease !important;
+    border-radius: 5px;
+}
+
+.texto-cuerpo:hover {
+    background-color: rgb(126, 146, 102);
+    color: white !important;
+}
+
+.colorUltimoBoton {
+    background-color: rgb(79, 90, 66) !important;
+}
+
+.dropdown-item {
+    color: var(--color-1) !important;
+}
+/*Final Navbar*/
+
+
+
+
+
+
+.container-cards {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    perspective: 1000px;
+    /* para efecto de profundidad */
+}
+
+.container-cards .card {
+    background: white;
+    border: 8px solid #a57c55;
+    /* Borde principal (madera o dorado) */
+    outline: 4px solid #e4d4b5;
+    /* Marco secundario (más claro) */
+    outline-offset: -12px;
+    /* Hace que quede pegado al borde */
+    border-radius: 6px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    text-align: center;
+    position: relative;
+    width: 240px;
+    height: 340px;
+    cursor: pointer;
+
+    margin: 25px 0px;
+}
+
+.container-cards .card img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.container-cards .card p {
+    margin: 0;
+    padding: 0.5rem;
+    font-weight: bold;
+}
+
+/* Efecto cuando el mouse entra al contenedor */
+.container-cards:hover .card {
+    transform: scale(0.9);
+    opacity: 0.6;
+}
+
+/* Efecto cuando el mouse está sobre la carta */
+.container-cards .card:hover {
+    transform: scale(1.2) translateY(-10px);
+    opacity: 1;
+    z-index: 10;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #222;
+    color: #fff;
+}
