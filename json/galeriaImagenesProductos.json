@@ -1,0 +1,202 @@
+[
+    {
+        "categoria": "Sher-Gil",
+        "imagen": "../img/estuche1.png",
+        "precio" : "10000"
+    },
+    {
+        "categoria": "Sher-Gil",
+        "imagen": "../img/estuche2.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Sher-Gil",
+        "imagen": "../img/estuche3.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Sher-Gil",
+        "imagen": "../img/estuche4.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Sher-Gil",
+        "imagen": "../img/estuche5.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Sher-Gil",
+        "imagen": "../img/estuche6.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Sher-Gil",
+        "imagen": "../img/estuche7.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Sher-Gil",
+        "imagen": "../img/estuche8.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Sher-Gil",
+        "imagen": "../img/estuche9.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Sher-Gil",
+        "imagen": "../img/estuche10.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Van Gogh",
+        "imagen": "../img/random1.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Van Gogh",
+        "imagen": "../img/random2.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Van Gogh",
+        "imagen": "../img/random3.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Van Gogh",
+        "imagen": "../img/random4.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Van Gogh",
+        "imagen": "../img/random5.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Van Gogh",
+        "imagen": "../img/random6.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Van Gogh",
+        "imagen": "../img/random7.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Artemisia",
+        "imagen": "../img/cuadroMascota1.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Artemisia",
+        "imagen": "../img/cuadroMascota2.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Artemisia",
+        "imagen": "../img/cuadroMascota3.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Artemisia",
+        "imagen": "../img/cuadroMascota4.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Artemisia",
+        "imagen": "../img/cuadroMascota5.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Artemisia",
+        "imagen": "../img/cuadroMascota6.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Artemisia",
+        "imagen": "../img/cuadroMascota7.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Artemisia",
+        "imagen": "../img/cuadroMascota8.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Artemisia",
+        "imagen": "../img/cuadroMascota9.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Artemisia",
+        "imagen": "../img/cuadroMascota10.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Artemisia",
+        "imagen": "../img/cuadroMascota11.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Artemisia",
+        "imagen": "../img/cuadroMascota12.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Artemisia",
+        "imagen": "../img/cuadroMascota13.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Artemisia",
+        "imagen": "../img/cuadroMascota14.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Artemisia",
+        "imagen": "../img/cuadroMascota15.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Artemisia",
+        "imagen": "../img/cuadroMascota16.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Rembrandt",
+        "imagen": "../img/siluetas y personas.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Velázquez",
+        "imagen": "../img/cuadromascotapequeño.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Velázquez",
+        "imagen": "../img/cuadromascotapequeño2.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Velázquez",
+        "imagen": "../img/cuadromascotapequeño3.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Velázquez",
+        "imagen": "../img/cuadromascotapequeño4.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Velázquez",
+        "imagen": "../img/cuadromascotapequeño5.png",
+        "precio" : "0"
+    },
+    {
+        "categoria": "Velázquez",
+        "imagen": "../img/cuadromascotapequeño6.png",
+        "precio" : "0"
+    }
+]

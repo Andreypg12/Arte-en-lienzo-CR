@@ -1,0 +1,22 @@
+[
+  {
+    "nombre": "Sher-Gil",
+    "imagen": "../img/cuadromoto.png"
+  },
+  {
+    "nombre": "Van Gogh",
+    "imagen": "../img/random6.png"
+  },
+  {
+    "nombre": "Artemisia",
+    "imagen": "../img/cuadroMascota16.png"
+  },
+  {
+    "nombre": "Rembrandt",
+    "imagen": "../img/siluetas y personas.png"
+  },
+  {
+    "nombre": "Velázquez",
+    "imagen": "../img/cuadromascotapequeño6.png"
+  }
+]
