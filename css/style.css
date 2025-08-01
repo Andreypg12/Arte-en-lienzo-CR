@@ -18,21 +18,15 @@
     --color-7: rgb(184, 191, 175);
     /* Gris cálido */
 
+    --colorFondos: rgb(196, 195, 172);
+
+
     --fontTitle: 'Playfair Display', serif;
     --fontText: 'Cormorant Garamond', serif;
 
 }
 
 
-.colorNavbar {
-    background-color: var(--color-6);
-    position: sticky;
-    top: 0;
-    z-index: 1030;
-}
-.dropdown-item {
-    color: var(--color-1) !important;
-}
 
 
 /*Botones fix whatsapp e instagram*/
@@ -43,7 +37,7 @@
     height: 50px;
     border-radius: 50%;
     background: #fff;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -65,14 +59,26 @@
 }
 
 .instagram {
-    bottom: 20px;        
+    bottom: 20px;
 }
 
 /*Fin de botones fix*/
 
 
+/*Parte Superior Logo*/
+
+.imagen-banner {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    position: relative;
+}
+
+/*Final parte superior Logo*/
 
 
+
+/*Navbar*/
 .titulo-Principal {
     font-family: 'Playfair Display', serif;
 }
@@ -96,35 +102,70 @@
 }
 
 
+.colorNavbar {
+    background-color: var(--color-6);
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+}
+
+.dropdown-item {
+    color: var(--color-1) !important;
+}
+
+.textoDropdown {
+    font-family: 'Quicksand', sans-serif;
+    color: var(--color-2) !important;
+    font-size: 20px !important;
+    padding: 10px 20px !important;
+    transition: all 0.5s ease !important;
+    border-radius: 5px;
+}
+
+.textoDropdown:hover {
+    background-color: rgb(126, 146, 102) !important;
+    color: rgb(255, 255, 255) !important;
+
+
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/*Navbar Final*/
+
+
+/*Indicaciones de pagina*/
+/* .intro-single {
+    background-color: var(--colorFondos);
+} */
+/*Indicaciones de pagina*/
+
+
+
+/*Carrousel*/
+#carouselExample {
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    /* opcional, bordes redondeados */
+}
+
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     filter: invert(1);
     /* Blanco → Negro (el ícono) */
     background-color: rgba(211, 241, 176, 0.2);
     border-radius: 50%;
-    /* forma circular */
     padding: 20px;
-
-    box-shadow: 0 0 0 10px rgba(211, 241, 176, 0.2);
+    box-shadow: 1px 1px 1px 1px rgba(211, 241, 176, 0.2);
 
 }
 
 .carousel-img {
-    height: 400px;     /* Ajusta la altura que desees */
-    object-fit: cover; /* Recorta la imagen sin deformarla */
+    height: 450px;
+    object-fit: cover;
 }
 
+/*Carrousel Final*/
 
-/* Parte del Breadcrumb inicio*/
-.breadcrumb-box {
-
-    height: 80px;
-    font-size: 20px;
-    align-items: center;
-    /* border: 2px solid black; */
-}
-
-/* Parte del Breadcrumb fin*/
 
 
 /*Contenedor informacion relevante*/
@@ -136,44 +177,63 @@
 
 
 .main-container {
-    display: flex; /* Habilita Flexbox para organizar las columnas */
-    justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: center; /* Alinea los elementos verticalmente */
-    max-width: 1200px; /* Limita el ancho del contenedor */
-    margin: 50px auto; /* Centra el contenedor en la página y da espacio vertical */
-    background-color: rgb(255, 255, 255); /* Color de fondo del contenedor */
-    padding: 40px; /* Espaciado interno */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    border-radius: 10px; /* Bordes redondeados */
+    display: flex;
+    /* Habilita Flexbox para organizar las columnas */
+    justify-content: center;
+    /* Centra el contenido horizontalmente */
+    align-items: center;
+    /* Alinea los elementos verticalmente */
+    max-width: 1200px;
+    /* Limita el ancho del contenedor */
+    margin: 50px auto;
+    /* Centra el contenedor en la página y da espacio vertical */
+    background-color: #2D402B;
+    /* Color de fondo del contenedor */
+    padding: 40px;
+    /* Espaciado interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+    border-radius: 10px;
+    /* Bordes redondeados */
 }
 
 /* --- Estilos para la columna de texto de la izquierda --- */
 .text-column {
-    flex: 1; /* Permite que la columna ocupe el espacio disponible */
-    padding-right: 40px; /* Espacio entre el texto y la imagen */
+    flex: 1;
+    /* Permite que la columna ocupe el espacio disponible */
+    padding-right: 40px;
+    /* Espacio entre el texto y la imagen */
 }
 
 .main-title {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente similar a la imagen */
-    font-size: 3em; /* Tamaño del título */
-    font-weight: 300; /* Peso de la fuente más ligero */
-    color: #333; /* Color de texto oscuro */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Fuente similar a la imagen */
+    font-size: 3em;
+    /* Tamaño del título */
+    font-weight: 300;
+    /* Peso de la fuente más ligero */
+    color: white;
+    /* Color de texto oscuro */
     margin-bottom: 20px;
 }
 
 .logo-container {
-    border-top: 1px solid #333; /* Línea superior */
-    border-bottom: 1px solid #333; /* Línea inferior */
+    border-top: 1px solid white;
+    /* Línea superior */
+    border-bottom: 1px solid white;
+    /* Línea inferior */
     padding: 10px 0;
     margin: 20px 0;
-    width: 200px; /* Ancho fijo para el logo */
+    width: 200px;
+    /* Ancho fijo para el logo */
 }
 
 .logo-line {
     font-weight: bold;
     font-size: 1.2em;
     line-height: 1.2;
-    margin: 0; /* Elimina márgenes predeterminados para que se vean juntos */
+    margin: 0;
+    /* Elimina márgenes predeterminados para que se vean juntos */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -185,40 +245,51 @@
 }
 
 .cta-button {
-    background-color: #1a73e8; /* Color azul del botón */
+    background-color: rgb(233, 159, 2);
+    /* Color azul del botón */
     color: white;
     padding: 12px 25px;
-    text-decoration: none; /* Quita el subrayado del enlace */
+    text-decoration: none;
+    /* Quita el subrayado del enlace */
     border-radius: 5px;
     font-weight: bold;
     display: inline-block;
-    transition: background-color 0.3s ease; /* Transición suave al pasar el mouse */
+    transition: all 0.5s ease;
 }
 
 .cta-button:hover {
-    background-color: #1558b0; /* Color más oscuro al pasar el mouse */
+    background-color: var(--color-1);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* --- Estilos para la columna de imagen de la derecha --- */
 .image-column {
-    flex: 1; /* Permite que la columna ocupe el espacio disponible */
+    flex: 1;
+    /* Permite que la columna ocupe el espacio disponible */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .circular-image {
-    width: 400px; /* Ancho de la imagen */
-    height: 400px; /* La misma altura para que sea un círculo perfecto */
-    border-radius: 50%; /* La propiedad clave para el círculo */
-    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+    width: 400px;
+    /* Ancho de la imagen */
+    height: 400px;
+    /* La misma altura para que sea un círculo perfecto */
+    border-radius: 50%;
+    /* La propiedad clave para el círculo */
+    object-fit: cover;
+    /* Asegura que la imagen cubra el área sin distorsionarse */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* --- Media query para dispositivos pequeños --- */
 @media (max-width: 768px) {
     .main-container {
-        flex-direction: column; /* Apila las columnas verticalmente */
+        flex-direction: column;
+        /* Apila las columnas verticalmente */
         padding: 20px;
         margin: 20px auto;
     }
@@ -226,11 +297,13 @@
     .text-column {
         padding-right: 0;
         padding-bottom: 20px;
-        text-align: center; /* Centra el texto */
+        text-align: center;
+        /* Centra el texto */
     }
-    
+
     .logo-container {
-        margin: 20px auto; /* Centra el logo */
+        margin: 20px auto;
+        /* Centra el logo */
     }
 
     .circular-image {
@@ -238,8 +311,6 @@
         height: 300px;
     }
 }
-
-
 
 /*Fin contenedor informacion relevante*/
 
@@ -250,7 +321,8 @@
 /*Seccion de cartas*/
 /* --- Estilos de la sección principal --- */
 .art-grid-section {
-    background-color: #ffffff; /* Fondo oscuro como en la imagen */
+    background-color: #ffffff;
+    /* Fondo oscuro como en la imagen */
     color: #000000;
     font-family: Arial, sans-serif;
     padding: 50px 20px;
@@ -263,23 +335,32 @@
 }
 
 .section-title-dark {
-    font-size: 2.5em;
-    font-weight: 300;
-    margin: 0;
+    font-size: 2.8em;
+    color: #333;
+    margin-bottom: 15px;
+    display: inline-block;
+    padding-bottom: 5px;
+    border-bottom: 3px solid #cebdbd;
+    /* Subrayado con el color terracota */
+
+    font-family: var(--fontTitle);
 }
 
 .section-subtitle-dark {
     color: #cebdbd;
     font-size: 1.1em;
     margin-top: 10px;
+    font-family: var(--fontText);
 }
 
 /* --- Estilos del contenedor de la cuadrícula --- */
 .art-grid-container {
     display: flex;
-    gap: 15px; /* Espacio entre las columnas */
+    gap: 15px;
+    /* Espacio entre las columnas */
     max-width: 1200px;
-    margin: 0 auto; /* Centra el contenedor */
+    margin: 0 auto;
+    /* Centra el contenedor */
 }
 
 /* --- Estilos de las columnas --- */
@@ -289,23 +370,29 @@
     flex-direction: column;
     gap: 15px;
 }
+
 .column-left {
     flex: 1;
 }
+
 .column-center {
     flex: 1;
 }
+
 .column-right {
-    flex: 1.5; /* Esta columna es un poco más ancha que las otras */
+    flex: 1.5;
+    /* Esta columna es un poco más ancha que las otras */
 }
 
 /* --- Estilos generales de los items de arte (imágenes) --- */
 .art-item {
-    position: relative; /* Clave para posicionar el texto superpuesto */
+    position: relative;
+    /* Clave para posicionar el texto superpuesto */
     margin: 0;
     padding: 0;
     cursor: pointer;
-    overflow: hidden; /* Asegura que la imagen no se desborde al hacer zoom */
+    overflow: hidden;
+    /* Asegura que la imagen no se desborde al hacer zoom */
 }
 
 .art-item img {
@@ -313,11 +400,13 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.3s ease; /* Transición para el efecto de zoom */
+    transition: transform 0.3s ease;
+    /* Transición para el efecto de zoom */
 }
 
 .art-item:hover img {
-    transform: scale(1.05); /* Efecto de zoom sutil al pasar el mouse */
+    transform: scale(1.05);
+    /* Efecto de zoom sutil al pasar el mouse */
 }
 
 /* --- Estilos de las imágenes específicas para el tamaño --- */
@@ -325,20 +414,25 @@
     height: 350px;
     border-radius: 10px;
 }
+
 .small-bottom {
     height: 200px;
     border-radius: 10px;
 }
+
 .small-top {
     height: 200px;
     border-radius: 10px;
 }
+
 .large-bottom {
     height: 350px;
     border-radius: 10px;
 }
+
 .full-height {
-    height: 565px; /* La suma de las alturas y el gap de las otras columnas */
+    height: 565px;
+    /* La suma de las alturas y el gap de las otras columnas */
     border-radius: 10px;
 }
 
@@ -350,7 +444,8 @@
     left: 0;
     width: 100%;
     padding: 15px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent); /* Gradiente para que se vea el texto */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    /* Gradiente para que se vea el texto */
     color: #fff;
     box-sizing: border-box;
     text-align: left;
@@ -376,46 +471,58 @@
 .explore-link {
     /* Estilos base del botón */
     display: inline-block;
-    padding: 15px 35px; /* Aumentado para un botón más grande */
+    padding: 15px 35px;
+    /* Aumentado para un botón más grande */
     color: #000000;
     text-decoration: none;
     font-size: 1.1em;
-    font-weight: bold; /* Le da más peso al texto */
+    font-weight: bold;
+    /* Le da más peso al texto */
     margin-top: 40px;
-    
+
     /* Nueva propiedad para el estilo */
-    background-color: #e0e0e0; /* Un gris claro como color de fondo inicial */
-    border: 2px solid #e0e0e0; /* Un borde sutil que coincide con el fondo */
-    border-radius: 30px; /* Esquinas redondeadas */
+    background-color: #e0e0e0;
+    /* Un gris claro como color de fondo inicial */
+    border: 2px solid #e0e0e0;
+    /* Un borde sutil que coincide con el fondo */
+    border-radius: 30px;
+    /* Esquinas redondeadas */
 
     /* La transición ahora es más lenta y afecta a todas las propiedades */
-    transition: all 0.4s ease-in-out; 
+    transition: all 0.4s ease-in-out;
 }
 
 .explore-link:hover {
     /* Estilos al pasar el mouse */
     background-color: #4b664c;
     color: #fff;
-    border-color: #4b664c; /* Cambia el color del borde para que coincida */
-    transform: translateY(-2px); /* Un sutil efecto de elevación */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Una sombra para darle profundidad */
+    border-color: #4b664c;
+    /* Cambia el color del borde para que coincida */
+    transform: translateY(-2px);
+    /* Un sutil efecto de elevación */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Una sombra para darle profundidad */
 }
 
 /* --- Media Queries para pantallas pequeñas --- */
 @media (max-width: 768px) {
     .art-grid-container {
-        flex-direction: column; /* Apila las columnas verticalmente */
+        flex-direction: column;
+        /* Apila las columnas verticalmente */
     }
-    
+
     .column-left,
     .column-center,
     .column-right {
-        flex: 1; /* Todas las columnas tienen el mismo ancho */
+        flex: 1;
+        /* Todas las columnas tienen el mismo ancho */
     }
 
     .art-item {
-        margin-bottom: 15px; /* Agrega espacio entre los items en móvil */
-        height: 250px !important; /* Altura uniforme para todos los items en móvil */
+        margin-bottom: 15px;
+        /* Agrega espacio entre los items en móvil */
+        height: 250px !important;
+        /* Altura uniforme para todos los items en móvil */
     }
 }
 
@@ -428,7 +535,7 @@
 /*Footer*/
 .footer-curve {
     position: relative;
-    background: linear-gradient(135deg, #8bb877, #6f9160, rgb(91, 133, 97));
+    background: linear-gradient(135deg, #466647, #2a4b29, #22531d);
     color: white;
     padding: 60px 20px 30px;
     font-family: var(--fontText);
@@ -481,7 +588,7 @@
 }
 
 hr {
-    border-color: rgba(255,255,255,0.2);
+    border-color: rgba(255, 255, 255, 0.2);
     margin-top: 20px;
 }
 
@@ -490,4 +597,3 @@ hr {
 
 
 /*Fin footer*/
-

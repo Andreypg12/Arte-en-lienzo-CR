@@ -18,6 +18,9 @@
     --color-7: rgb(184, 191, 175);
     /* Gris cálido */
 
+    --colorFondos: rgb(196, 195, 172);
+
+
     --fontTitle: 'Playfair Display', serif;
     --fontText: 'Cormorant Garamond', serif;
 
@@ -39,15 +42,60 @@ main {
 }
 
 
+/*Botones fix whatsapp e instagram*/
+.btn-float {
+    position: fixed;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: transform 0.3s;
+}
+
+.btn-float img {
+    width: 28px;
+    height: 28px;
+}
+
+.btn-float:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp {
+    bottom: 90px;
+}
+
+.instagram {
+    bottom: 20px;
+}
+
+/*Fin de botones fix*/
 
 
-/*Navbar */
 
-.colorNavbar {
-    background-color: var(--color-6);
-    position: sticky;
-    top: 0;
-    z-index: 1030;
+/*Parte Superior Logo*/
+
+.imagen-banner {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    position: relative;
+}
+
+/*Final parte superior Logo*/
+
+
+
+
+/*Navbar*/
+.titulo-Principal {
+    font-family: 'Playfair Display', serif;
 }
 
 .texto-cuerpo {
@@ -68,10 +116,36 @@ main {
     background-color: rgb(79, 90, 66) !important;
 }
 
+
+.colorNavbar {
+    background-color: var(--color-6);
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+}
+
 .dropdown-item {
     color: var(--color-1) !important;
 }
-/*Final Navbar*/
+
+.textoDropdown {
+    font-family: 'Quicksand', sans-serif;
+    color: var(--color-2) !important;
+    font-size: 20px !important;
+    padding: 10px 20px !important;
+    transition: all 0.5s ease !important;
+    border-radius: 5px;
+}
+
+.textoDropdown:hover {
+    background-color: rgb(126, 146, 102) !important;
+    color: rgb(255, 255, 255) !important;
+
+
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/*Navbar Final*/
 
 
 
@@ -103,7 +177,7 @@ main {
     border-radius: 15px;
     flex: 1 1 300px;
     background-color: var(--color-3);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -124,7 +198,7 @@ main {
 
 #contact-form button:hover {
     background-color: var(--color-1);
-    box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -140,7 +214,7 @@ main {
     font-size: 17px;
     line-height: 1.6;
     color: var(--color-1);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -156,6 +230,7 @@ main {
     margin-top: 20px;
     border-radius: 8px;
 }
+
 /*Final Información de contacto*/
 
 
