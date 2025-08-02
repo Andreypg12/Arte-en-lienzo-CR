@@ -1,22 +1,26 @@
 [
   {
-    "nombre": "Sher-Gil",
+    "nombre": "Estuches",
     "imagen": "../img/cuadromoto.png"
   },
   {
-    "nombre": "Van Gogh",
+    "nombre": "Articulos",
     "imagen": "../img/random6.png"
   },
   {
-    "nombre": "Artemisia",
+    "nombre": "Cuadros de mascotas",
     "imagen": "../img/cuadroMascota16.png"
   },
   {
-    "nombre": "Rembrandt",
+    "nombre": "Personas y retratos",
     "imagen": "../img/siluetas y personas.png"
   },
   {
-    "nombre": "Velázquez",
+    "nombre": "Mini cuadros",
     "imagen": "../img/cuadromascotapequeño6.png"
+  },
+  {
+    "nombre": "Cuadros de vehículos",
+    "imagen": "../img/cuadroCarro.png"
   }
 ]
