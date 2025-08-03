@@ -3,5 +3,10 @@
     "nombre": "Banner",
     "descripcion": "Imagen del banner",
     "imagen": "../img/tituloBanner.jpg"
+  },
+  {
+    "nombre": "Medidas",
+    "descripcion": "Imagen de las medidas",
+    "imagen": "../img/TamanosCuadros.jpg"
   }
 ]
