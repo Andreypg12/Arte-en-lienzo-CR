@@ -1,0 +1,124 @@
+:root {
+    --color-primario: rgb(154, 158, 141);
+    /* Tono neutro suave */
+    --color-secundario: rgb(196, 138, 98);
+    /* Terracota cálido */
+    --color-1: rgb(117, 76, 52);
+    /* Marrón artístico */
+    --color-2: rgb(130, 146, 146);
+    /* Verde grisáceo */
+    --color-3: rgb(212, 186, 161);
+    /* Beige elegante */
+    --color-4: rgb(239, 226, 220);
+    /* Rosa pálido */
+    --color-5: rgb(229, 191, 155);
+    /* Melocotón suave */
+    --color-6: rgb(113, 126, 98);
+    /* Verde oliva oscuro */
+    --color-7: rgb(184, 191, 175);
+    /* Gris cálido */
+
+    --colorFondos: rgb(196, 195, 172);
+
+
+    --fontTitle: 'Playfair Display', serif;
+    --fontText: 'Cormorant Garamond', serif;
+
+}
+
+
+/*Modal politicas*/
+/* Estilos del modal */
+.modal {
+    display: none; 
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* margen opcional */
+}
+
+/* Contenedor */
+.modal-content {
+    background: var(--color-4);
+    width: 60%;
+    max-width: 800px;
+    max-height: 80%;
+    padding: 25px;
+    border-radius: 15px;
+    overflow-y: auto;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    font-family: var(--fontText);
+    position: relative;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Título */
+.modal-content h2 {
+    font-family: var(--fontTitle);
+    color: var(--color-1);
+    margin-bottom: 15px;
+    font-size: 28px;
+    text-align: center;
+}
+
+/* Título */
+.modal-content p {
+    font-family: var(--fontTitle);
+    color: var(--color-1);
+    margin-bottom: 15px;
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Lista */
+.modal-content ul {
+    padding-left: 20px;
+    color: var(--color-8);
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Botón cerrar (X) */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: var(--color-2);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.close:hover {
+    color: var(--color-1);
+}
+
+/* Footer con botón */
+.modal-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-close-modal {
+    background: var(--color-secundario);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: var(--fontText);
+    transition: background 0.3s;
+}
+.btn-close-modal:hover {
+    background: var(--color-1);
+}
+
+/* Animación */
+@keyframes fadeIn {
+    from {transform: scale(0.9); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
+/*Final modal politicas*/

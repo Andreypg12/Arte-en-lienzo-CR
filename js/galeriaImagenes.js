@@ -1,11 +1,10 @@
 fetch("../json/galeriaImagenes.json")
-    .then(response => response.json())
-    .then(data => {
+  .then((response) => response.json())
+  .then((data) => {
+    let html = "";
 
-        let html = "";
-
-        data.forEach(item => {
-            html += `
+    data.forEach((item) => {
+      html += `
 
         <div class="card categoria" data-categoria="${item.nombre}">
           <img src="${item.imagen}" alt="${item.nombre}">
@@ -13,23 +12,24 @@ fetch("../json/galeriaImagenes.json")
         </div>
 
         `;
-        });
+    });
 
-        $("#containerPrincipalGaleriaImagenes").html(html);
+    $("#containerPrincipalGaleriaImagenes").html(html);
+  })
+  .then(() => {
+    $(document).on("click", ".categoria", function () {
+      const categoriaSeleccionada = $(this).data("categoria");
 
-    })
-    .then(() => {
-        $(document).on("click", ".categoria", function () {
-            const categoriaSeleccionada = $(this).data("categoria");
+      fetch("../json/galeriaImagenesProductos.json")
+        .then((response) => response.json())
+        .then((data) => {
+          const imagenesFiltradas = data.filter(
+            (item) => item.categoria === categoriaSeleccionada
+          );
 
-            fetch("../json/galeriaImagenesProductos.json")
-                .then(response => response.json())
-                .then(data => {
-                    const imagenesFiltradas = data.filter(item => item.categoria === categoriaSeleccionada);
-
-                    let html = "";
-                    imagenesFiltradas.forEach(item => {
-                        html += `
+          let html = "";
+          imagenesFiltradas.forEach((item) => {
+            html += `
 
                         <div class="card">
                             <img src="${item.imagen}"">
@@ -37,12 +37,30 @@ fetch("../json/galeriaImagenes.json")
                         </div>
                         
                         `;
-                    });
+          });
 
-                    $("#containerProductosGaleriaImagenes").html(html);
-                });
+          $("#containerProductosGaleriaImagenes").html(html);
         });
-    })
-    .catch(error => {
-        console.error("Error al cargar la galería principal:", error);
-    }); 
+    });
+  })
+  .catch((error) => {
+    console.error("Error al cargar la galería principal:", error);
+  });
+
+
+
+
+
+$(document).ready(function () {
+    // Mostrar u ocultar la sección de imagen
+    $("#btn-imagen").click(function () {
+        $("#seccion-imagen").slideToggle();
+    });
+
+    // Mostrar u ocultar el carrusel
+    $("#btn-carrusel").click(function () {
+        $("#carousel-section").slideToggle();
+    });
+});
+
+

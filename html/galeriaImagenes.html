@@ -7,6 +7,7 @@
     <title>Galería de Arte</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/galeriaimagenes.css">
+    <link rel="stylesheet" href="../css/politicas.css">
 </head>
 
 <body>
@@ -43,14 +44,68 @@
                                 Info</a>
                             <div class="dropdown-menu bg-light m-0">
                                 <a href="galeriaImagenes.html" class="dropdown-item textoDropdown">Galería Arte</a>
-                                <a href="#" class="dropdown-item textoDropdown">Free Quote</a>
+                                <!--  <a href="#" class="dropdown-item textoDropdown">Free Quote</a>
                                 <a href="#" class="dropdown-item textoDropdown">Our Team</a>
-                                <a href="#" class="dropdown-item textoDropdown">Testimonial</a>
-                                <a href="#" class="dropdown-item textoDropdown">404 Page</a>
+                                <a href="#" class="dropdown-item textoDropdown">Testimonial</a> -->
+                                <a href="#" id="btnPoliticas" class="dropdown-item textoDropdown">Políticas de la
+                                    empresa</a>
                             </div>
                         </div>
 
                         <a href="Contacto.html" class="nav-item nav-link texto-cuerpo">Contacto</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal (cuadro de texto) -->
+            <div id="modalPoliticas" class="modal">
+                <div class="modal-content">
+                    <h2>Políticas de la empresa</h2>
+                    <p>
+                        La agenda siempre se manejará por quincena y con pocos cupos en agenda, debido a mis otros
+                        trabajos.
+                        Te recomiendo agendar con tiempo, recuerda que los retratos llevarán días para poder terminarlo
+                        y dar un resultado hermoso.
+                    </p>
+                    <ul>
+                        <li>Todos los pedidos se consideran confirmados una vez realizado el adelanto correspondiente
+                            del 50% del valor del pedido.</li>
+                        <li>Una vez confirmados, hay un plazo de 24 horas para cambios en el pedido.</li>
+                        <li>No se realizan devoluciones de dinero una vez se realice el pedido, salvo por error
+                            incurrido de Arte en Lienzo, en este caso, Arte en Lienzo cuenta con un mes hábil para el
+                            reintegro del dinero.</li>
+                        <li>Tiempo estimado de producción es de 2 - 4 semanas desde la confirmación del pedido.</li>
+                        <li>Se le hará saber al cliente una fecha tentativa de envío.</li>
+                        <li>En caso de presentarse un atraso por algún inconveniente de Arte en Lienzo, se le hará saber
+                            al cliente, NO se realiza la devolución del pedido por la razón antes descrita, por lo que
+                            se enviará el pedido tan pronto se encuentre listo. Si por este retraso el cliente ya no
+                            desea continuar con el pedido, no se realizará reembolso.</li>
+                        <li>Solamente se procede a entregar y a enviar una vez cancelado la totalidad del pedido más el
+                            costo del envío.</li>
+                        <li>Los envíos serán realizados por medio de Correos Costa Rica y por medio de Uber Flash, Arte
+                            en Lienzo CR no se responsabiliza por enviar paquetes a direcciones mal proporcionadas por
+                            el cliente, para lo cual, el cliente debe asegurarse de enviar la ubicación o dirección
+                            correcta.</li>
+                        <li>No se realizan desembolsos o devoluciones de adelanto si el pedido se encuentra terminado.
+                        </li>
+                        <li>En caso de que el cliente incurra al error de encargar un estuche con un modelo de celular
+                            erróneo, este deberá cancelar el monto de 5000 colones para poder solicitar de nuevo el
+                            modelo correcto para la funda de celular.</li>
+                        <li>En caso de que el cliente indique un tamaño erróneo del lienzo, se cobrará el pedido según
+                            el tamaño realizado.</li>
+                        <li>El cliente que realice un pedido de retratos de personas o mascotas acepta que Arte en
+                            Lienzo CR pueda subir a redes sociales el resultado del retrato. De no ser así, el cliente
+                            debe indicar que no quiere que se suba el retrato a redes sociales.</li>
+                        <li>No se aceptan reclamos después de 24 horas de la entrega del producto.</li>
+                        <li>Todo pago se realiza por medio de transferencia bancaria, SINPE MÓVIL o PayPal.</li>
+                        <li>Los daños producidos por el descuido de las instituciones de envío, deberán ser reportadas
+                            de inmediato para solucionar el problema con estas instituciones. Arte en Lienzo no
+                            responderá ni realizará devoluciones por descuidos por parte de Correos Costa Rica o Uber
+                            Flash. Siempre existe la opción del retiro personal en San Rafael de Alajuela.</li>
+                        <li>La persona encargada del retiro personal deberá cancelar el pedido antes de retirarlo.</li>
+                    </ul>
+                    <div class="modal-footer">
+                        <button id="btnCerrarModal" class="btn-close-modal">Cerrar</button>
                     </div>
                 </div>
             </div>
@@ -88,11 +143,91 @@
     <div id="containerProductosGaleriaImagenes" class="container-cards">
     </div>
 
-    <select id="selectorMoneda">
-        <option value="CRC">Colones (CRC)</option>
-        <option value="USD">Dólares (USD)</option>
-        <option value="EUR">Euros (EUR)</option>
-    </select>
+
+
+    <div class="contenedorMoneda">
+        <select id="selectorMoneda" class="select-elegante">
+            <option value="CRC">Colones (CRC)</option>
+            <option value="USD">Dólares (USD)</option>
+            <option value="EUR">Euros (EUR)</option>
+        </select>
+    </div>
+
+
+
+    <!-- Botones -->
+    <div class="ContBotones">
+        <button id="btn-imagen" class="btn mb-3 btn-gradient">Medidas de Cuadros</button>
+        <button id="btn-carrusel" class="btn mb-3 btn-border">Información adicional </button>
+    </div>
+
+
+    <!-- Modal de imagen -->
+    <!-- Sección Imagen -->
+    <div id="seccion-imagen" class="seccion-oculta">
+        <img src="../img/TamanosCuadros.jpg" alt="Imagen" />
+    </div>
+
+    <!-- Sección carrusel -->
+    <div id="carousel-section" class="container seccion-oculta">
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+
+
+                <div class="carousel-item active">
+                    <img src="../img/carouselInfo3.jpg" class="d-block w-100" alt="imagen3">
+                </div>
+
+                <div class="carousel-item ">
+                    <img src="../img/carouselInfo1.jpg" class="d-block w-100" alt="imagen1">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="../img/carouselInfo2.jpg" class="d-block w-100" alt="imagen2">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="../img/carouselInfo7.jpg" class="d-block w-100" alt="imagen3">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="../img/carouselInfo4.jpg" class="d-block w-100" alt="imagen3">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="../img/carouselInfo5.jpg" class="d-block w-100" alt="imagen3">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="../img/carouselInfo6.jpg" class="d-block w-100" alt="imagen3">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="../img/tamanosEstuches.jpg" class="d-block w-100" alt="imagen3">
+                </div>
+
+
+
+                <div class="carousel-item">
+                    <img src="../img/carouselInfo8.jpg" class="d-block w-100" alt="imagen3">
+                </div>
+
+
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+
+    </div>
+
+
+
+
 
     <footer>
         <p>© 2025 Arte en Lienzo CR. Todos los derechos reservados.</p>
@@ -103,7 +238,7 @@
     <script src="../js/apiRestImagenes.js"></script>
     <script src="../js/galeriaImagenes.js"></script>
     <script src="../js/apiCambioMoneda.js"></script>
-
+    <script src="../js/politicasEmpresa.js"></script>
 </body>
 
 </html>

@@ -30,7 +30,7 @@
 body {
     margin: 0;
     font-family: 'Cormorant Garamond', serif;
-    background: #f8f8f8;
+    background: #fff;
     color: #333;
 }
 
@@ -69,6 +69,10 @@ body {
 }
 
 /*Fin de botones fix*/
+
+
+
+
 
 
 
@@ -145,6 +149,8 @@ body {
 
 
 
+/*Galeria de imagenes*/
+
 .container-cards {
     display: flex;
     flex-wrap: wrap;
@@ -190,23 +196,202 @@ body {
 /* Efecto cuando el mouse entra al contenedor */
 .container-cards:hover .card {
     transform: scale(0.9);
-    opacity: 0.6;
+   /*  opacity: 0.6; */
 }
 
 /* Efecto cuando el mouse está sobre la carta */
 .container-cards .card:hover {
     transform: scale(1.2) translateY(-10px);
-    opacity: 1;
+   /*  opacity: 1; */
     z-index: 10;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
 }
+
+/*Final de la galeria de imagenes*/
+
+
+
+
+
+/*Seccion moneda*/
+
+.contenedorMoneda {
+    position: fixed;
+    left: 20px;
+    /* Fijo al lado izquierdo */
+    bottom: 20px;
+    /* Puedes ajustar la altura */
+    z-index: 1000;
+}
+
+/* Selector como botón elegante */
+.select-elegante {
+    appearance: none;
+    background: linear-gradient(135deg, #614f4a, #614f4a);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease;
+    min-width: 130px;
+    /* Para que no se vea muy pequeño */
+}
+
+/* Hover */
+.select-elegante:hover {
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.6);
+    transform: scale(1.05);
+}
+
+/* Opciones del dropdown */
+.select-elegante option {
+    background: #1e1e2f;
+    color: #fff;
+    padding: 10px;
+}
+
+/*Final seccion moneda*/
+
+
+
+
+
+/*Sección mas informacion de cuadros*/
+
+.ContBotones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+
+    padding: 4rem;
+}
+
+
+/*Boton 1*/
+.btn-gradient {
+    background: linear-gradient(45deg, #70976c, #22522a);
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(53, 122, 68, 0.4);
+}
+
+.btn-gradient:hover {
+    background: linear-gradient(45deg, #92ff76, #92ff76);
+    /* nuevo degradado */
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(25, 56, 30, 0.4);
+    color: #fff;
+}
+
+
+
+/*Boton 2*/
+.btn-border {
+    background: linear-gradient(45deg, #70976c, #22522a);
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(25, 56, 30, 0.4);
+}
+
+
+.btn-border:hover {
+    background: linear-gradient(45deg, #c3ddbc, #c3ddbc);
+    /* nuevo degradado */
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(25, 56, 30, 0.4);
+    color: #fff;
+}
+
+
+
+/*Mas informacion de cuadros*/
+
+.seccion-oculta {
+    display: none;
+    text-align: center;
+    margin: 30px auto;
+    max-width: 800px;
+}
+
+/* Imagen */
+#seccion-imagen img {
+    width: 60%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Carrusel */
+#carousel-section {
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+#carousel-section img {
+    width: 100%;
+    /* Ocupa todo el ancho del carrusel */
+    max-height: 800px;
+    /* Máxima altura permitida */
+    object-fit: contain;
+    /* Ajusta sin deformar */
+    border-radius: 8px;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    background-color: rgba(83, 58, 58, 0.85);
+    border-radius: 50%;
+    width: 40px;
+    /* Ancho del círculo */
+    height: 40px;
+    /* Alto del círculo */
+    background-size: 70% 70%;
+    /* Tamaño de la flecha dentro */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover */
+.carousel-control-next-icon:hover,
+.carousel-control-prev-icon:hover {
+    background-color: #70976c;
+    /* Cambia el color de fondo */
+    transform: scale(1.1);
+    /* Efecto de aumento */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    /* Sombra más intensa */
+}
+
+/*Final mas Informacion de cuadros*/
+
 
 
 
 /* Footer */
 footer {
     text-align: center;
-    padding: 1rem;
+    padding: 3rem;
     background: #222;
     color: #fff;
 }
