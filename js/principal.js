@@ -12,7 +12,7 @@ $(document).ready(
 
                 <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
                     <div class="navbar-nav">
-                        <div class="d-flex align-items-center gap-4">
+                        <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center gap-2 gap-lg-4">
                             <a href="Home.html" class="nav-item nav-link texto-cuerpo">Home</a>
                             <a href="acercaDe.html" class="nav-item nav-link texto-cuerpo">Acerca de..</a>
 
@@ -158,11 +158,12 @@ $(document).ready(
                 let html = "";
 
                 data.forEach((item, index) => {
-                    html += `
-        <div class="carousel-item ${index === 0 ? 'active' : ''}">
-          <img src="${item.imagen}" class="d-block w-100 carousel-img" alt="${item.nombre}">
-        </div>
-      `;
+                    html +=
+                        `
+                        <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                        <img src="${item.imagen}" class="d-block w-100 carousel-img" alt="${item.nombre}">
+                        </div>
+                    `;
                 });
 
                 $("#carousel-container").html(html);
@@ -179,14 +180,13 @@ $(document).ready(
                 let html = "";
 
                 data.forEach((item) => {
-                    html += `
-
-        <div class="card categoria" data-categoria="${item.nombre}">
-          <img src="${item.imagen}" alt="${item.nombre}">
-          <p>${item.nombre}</p>
-        </div>
-
-        `;
+                    html +=
+                        `
+                        <div class="card categoria" data-categoria="${item.nombre}">
+                        <img src="${item.imagen}" alt="${item.nombre}">
+                        <p>${item.nombre}</p>
+                        </div>
+                    `;
                 });
 
                 $("#containerPrincipalGaleriaImagenes").html(html);
@@ -233,9 +233,8 @@ $(document).ready(
             .then(data => {
                 const medidas = data.find(item => item.nombre === "Medidas");
                 if (medidas) {
-                    let html = "";
 
-                    html += `<img src="${medidas.imagen}" alt="${medidas.descripcion}" />`
+                    let html = `<img src="${medidas.imagen}" alt="${medidas.descripcion}" />`
 
                     $("#seccion-imagen").html(html)
                 }
@@ -258,11 +257,11 @@ $(document).ready(
                 data.forEach((item, index) => {
                     html +=
                         `
-                                <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                                <img src="${item.imagen}" class="d-block w-100" alt="${item.nombre}">
-                                </div>
-        
-                                `;
+                        <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                        <img src="${item.imagen}" class="d-block w-100" alt="${item.nombre}">
+                        </div>
+
+                    `;
                 });
 
                 $("#carousel-container-galeria").html(html);
