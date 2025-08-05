@@ -172,6 +172,29 @@ $(document).ready(
         // ================= Carousel de la página principal =================
 
 
+
+
+        // ================= Calculo de edad en formulario =================
+
+        $('#FechaNacimiento').on('change', function () {
+            const fechaNacimiento = new Date($(this).val());
+            const fechaActual = new Date();
+
+            let edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+            const mes = fechaActual.getMonth() - fechaNacimiento.getMonth();
+
+            if (mes < 0 || (mes === 0 && fechaActual.getDate() < fechaNacimiento.getDate())) {
+                edad--;
+            }
+
+            $('#edad').val(edad);
+        });
+
+        // ================= Calculo de edad en formulario =================
+
+
+
+
         // ================= Galeria de imagenes =================
 
         fetch("../json/galeriaImagenes.json")

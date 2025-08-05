@@ -66,28 +66,88 @@
         <h2>Contáctanos</h2>
         <div class="contact-container">
 
-            <form id="form">
-                <div class="mb-3">
-                    <label for="nombre" class="form-label fs-5">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" name="name" placeholder="Tu nombre completo" required>
-                </div>
+            <form id="form" class="p-4 border rounded shadow">
 
+                <!-- Correo electrónico -->
                 <div class="mb-3">
                     <label for="email" class="form-label fs-5">Correo electrónico</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="ejemplo@correo.com"
+                        required>
                 </div>
 
+                <!-- Nombre completo -->
+                <div class="mb-3">
+                    <label for="nombre" class="form-label fs-5">Nombre completo</label>
+                    <input type="text" class="form-control" id="nombre" name="name" placeholder="Tu nombre completo"
+                        required>
+                </div>
+
+                <!-- Fecha de nacimiento -->
+                <div class="mb-3">
+                    <label for="FechaNacimiento" class="form-label fs-5">Fecha de nacimiento</label>
+                    <input type="date" class="form-control" id="FechaNacimiento" name="fechaNacimiento" required>
+                </div>
+
+                <!-- Edad (oculta) -->
+                 <!-- poner : type="hidden" -->
+                <input id="edad" name="edad">
+
+                <!-- Rango de ingreso mensual -->
+                <div class="mb-3">
+                    <label for="ingreso" class="form-label fs-5">Rango de ingreso mensual</label>
+                    <select class="form-select" id="ingreso" name="ingreso" required>
+                        <option value="">Seleccione un rango</option>
+                        <option value="menos_300">Menos de ₡300.000</option>
+                        <option value="300_600">₡300.000 - ₡600.000</option>
+                        <option value="600_900">₡600.000 - ₡900.000</option>
+                        <option value="900_mas">Más de ₡900.000</option>
+                    </select>
+                </div>
+
+                <!-- Género -->
+                <div class="mb-3">
+                    <label class="form-label fs-5">Género</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="masculino" name="genero" value="Masculino"
+                            required>
+                        <label class="form-check-label" for="masculino">Masculino</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="femenino" name="genero" value="Femenino">
+                        <label class="form-check-label" for="femenino">Femenino</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="otro" name="genero" value="Otro">
+                        <label class="form-check-label" for="otro">Otro</label>
+                    </div>
+                </div>
+
+                <!-- Grado académico -->
+                <div class="mb-3">
+                    <label for="grado" class="form-label fs-5">Grado académico (puede seleccionar varios)</label>
+                    <select class="form-select" id="grado" name="grado[]" multiple required>
+                        <option value="secundaria">Secundaria</option>
+                        <option value="tecnico">Técnico</option>
+                        <option value="diplomado">Diplomado</option>
+                        <option value="bachiller">Bachillerato Universitario</option>
+                        <option value="licenciatura">Licenciatura</option>
+                        <option value="maestria">Maestría</option>
+                        <option value="doctorado">Doctorado</option>
+                    </select>
+                </div>
+
+                <!-- Mensaje -->
                 <div class="mb-3">
                     <label for="mensaje" class="form-label fs-5">Mensaje</label>
-                    <textarea class="form-control" id="mensaje" name="message" required></textarea>
+                    <textarea class="form-control" id="mensaje" name="message" rows="4" required></textarea>
                 </div>
 
-
+                <!-- Botón enviar -->
                 <div class="d-grid">
-                    <!-- <button type="submit" id="button" class="btn fs-5">Enviar</button> -->
-                    <input type="submit" id="button" class="btn fs-5" value="Enviar"  >
+                    <input type="submit" id="button" class="btn btn-dark fs-5" value="Enviar">
                 </div>
             </form>
+
             <script type="text/javascript"
                 src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
