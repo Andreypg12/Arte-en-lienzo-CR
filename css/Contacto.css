@@ -172,7 +172,7 @@ main {
     justify-content: center;
 }
 
-#contact-form {
+#form {
     padding: 30px;
     border-radius: 15px;
     flex: 1 1 300px;
@@ -181,12 +181,12 @@ main {
 }
 
 
-#contact-form label {
+#form label {
     color: var(--color-1);
 }
 
 
-#contact-form button {
+#form #button {
     background-color: var(--color-secundario);
     color: white;
     font-family: var(--fontTitle);
@@ -196,7 +196,7 @@ main {
     margin-top: 30px;
 }
 
-#contact-form button:hover {
+#form #button:hover {
     background-color: var(--color-1);
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
 }
