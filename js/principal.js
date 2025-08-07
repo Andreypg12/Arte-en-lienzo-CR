@@ -1,9 +1,8 @@
 $(document).ready(
-    // ================= generador del Nav Bar =================
-    function () {
-
-        document.querySelectorAll('[name="navbar"]').forEach(element => {
-            element.innerHTML = `
+  // ================= generador del Nav Bar =================
+  function () {
+    document.querySelectorAll('[name="navbar"]').forEach((element) => {
+      element.innerHTML = `
             <div class="container-fluid">
                 <button class="navbar-toggler me-3" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarCollapse">
@@ -21,9 +20,7 @@ $(document).ready(
                                     Info</a>
                                 <div class="dropdown-menu bg-light m-0">
                                     <a href="../html/galeriaImagenes.html" class="dropdown-item textoDropdown">Galería Arte</a>
-                                    <!--  <a href="#" class="dropdown-item textoDropdown">Free Quote</a>
-                                    <a href="#" class="dropdown-item textoDropdown">Our Team</a>
-                                    <a href="#" class="dropdown-item textoDropdown">Testimonial</a> -->
+                                    <a href="../html/autores.html" class="dropdown-item textoDropdown">Autores</a> 
                                     <a href="#" id="btnPoliticas" class="dropdown-item textoDropdown">Políticas de la empresa</a>
                                 </div>
                             </div>
@@ -87,147 +84,138 @@ $(document).ready(
             </div>
             `;
 
-            // Todo lo que accede al DOM debe ir aquí dentro ↓↓↓
-            const modal = element.querySelector('#modalPoliticas');
-            const btn = element.querySelector('#btnPoliticas');
-            const btnCerrar = element.querySelector('#btnCerrarModal');
+      // Todo lo que accede al DOM debe ir aquí dentro ↓↓↓
+      const modal = element.querySelector("#modalPoliticas");
+      const btn = element.querySelector("#btnPoliticas");
+      const btnCerrar = element.querySelector("#btnCerrarModal");
 
-            // Podrías tener una X con clase close, si no existe, ignóralo
-            const spanClose = element.querySelector('.close');
+      // Podrías tener una X con clase close, si no existe, ignóralo
+      const spanClose = element.querySelector(".close");
 
-            modal.style.display = 'none';
+      modal.style.display = "none";
 
-            // Abrir modal
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                modal.style.display = 'flex'; // o 'block' si estás usando estilos básicos
-            });
+      // Abrir modal
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        modal.style.display = "flex"; // o 'block' si estás usando estilos básicos
+      });
 
-            // Cerrar con botón
-            btnCerrar.addEventListener('click', () => {
-                modal.style.display = 'none';
-            });
+      // Cerrar con botón
+      btnCerrar.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
 
-            // Cerrar con la X si existe
-            if (spanClose) {
-                spanClose.addEventListener('click', () => {
-                    modal.style.display = 'none';
-                });
-            }
-
-            // Cerrar haciendo clic fuera del contenido
-            window.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    modal.style.display = 'none';
-                }
-            });
+      // Cerrar con la X si existe
+      if (spanClose) {
+        spanClose.addEventListener("click", () => {
+          modal.style.display = "none";
         });
+      }
 
+      // Cerrar haciendo clic fuera del contenido
+      window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+    });
 
-        // ================= generador del Nav Bar =================
+    // ================= generador del Nav Bar =================
 
+    // ================= Imagen del banner =================
 
+    fetch("../json/imagenes.json")
+      .then((response) => response.json())
+      .then((data) => {
+        const banner = data.find((item) => item.nombre === "Banner");
+        if (banner) {
+          document.querySelectorAll('[name="banner"]').forEach((element) => {
+            element.innerHTML = `<img src="${banner.imagen}" alt="${banner.descripcion}" />`;
+          });
+        }
+      });
 
-        // ================= Imagen del banner =================
+    // ================= Imagen del banner =================
 
-        fetch("../json/imagenes.json")
-            .then(response => response.json())
-            .then(data => {
-                const banner = data.find(item => item.nombre === "Banner");
-                if (banner) {
-                    document.querySelectorAll('[name="banner"]').forEach(element => {
-                        element.innerHTML = `<img src="${banner.imagen}" alt="${banner.descripcion}" />`;
-                    });
-                }
-            });
+    // ================= Carousel de la página principal =================
 
+    fetch("../json/imagenesCarousel.json")
+      .then((response) => response.json())
+      .then((data) => {
+        let html = "";
 
-
-        // ================= Imagen del banner =================
-
-
-
-
-        // ================= Carousel de la página principal =================
-
-
-
-        fetch("../json/imagenesCarousel.json")
-            .then(response => response.json())
-            .then(data => {
-                let html = "";
-
-                data.forEach((item, index) => {
-                    html +=
-                        `
-                        <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                        <img src="${item.imagen}" class="d-block w-100 carousel-img" alt="${item.nombre}">
+        data.forEach((item, index) => {
+          html += `
+                        <div class="carousel-item ${
+                          index === 0 ? "active" : ""
+                        }">
+                        <img src="${
+                          item.imagen
+                        }" class="d-block w-100 carousel-img" alt="${
+            item.nombre
+          }">
                         </div>
                     `;
-                });
-
-                $("#carousel-container").html(html);
-            });
-
-        // ================= Carousel de la página principal =================
-
-
-
-
-        // ================= Calculo de edad en formulario =================
-
-        $('#FechaNacimiento').on('change', function () {
-            const fechaNacimiento = new Date($(this).val());
-            const fechaActual = new Date();
-
-            let edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
-            const mes = fechaActual.getMonth() - fechaNacimiento.getMonth();
-
-            if (mes < 0 || (mes === 0 && fechaActual.getDate() < fechaNacimiento.getDate())) {
-                edad--;
-            }
-
-            $('#edad').val(edad);
         });
 
-        // ================= Calculo de edad en formulario =================
+        $("#carousel-container").html(html);
+      });
 
+    // ================= Carousel de la página principal =================
 
+    // ================= Calculo de edad en formulario =================
 
+    $("#FechaNacimiento").on("change", function () {
+      const fechaNacimiento = new Date($(this).val());
+      const fechaActual = new Date();
 
-        // ================= Galeria de imagenes =================
+      let edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+      const mes = fechaActual.getMonth() - fechaNacimiento.getMonth();
 
-        fetch("../json/galeriaImagenes.json")
-            .then((response) => response.json())
-            .then((data) => {
-                let html = "";
+      if (
+        mes < 0 ||
+        (mes === 0 && fechaActual.getDate() < fechaNacimiento.getDate())
+      ) {
+        edad--;
+      }
 
-                data.forEach((item) => {
-                    html +=
-                        `
+      $("#edad").val(edad);
+    });
+
+    // ================= Calculo de edad en formulario =================
+
+    // ================= Galeria de imagenes =================
+
+    fetch("../json/galeriaImagenes.json")
+      .then((response) => response.json())
+      .then((data) => {
+        let html = "";
+
+        data.forEach((item) => {
+          html += `
                         <div class="card categoria" data-categoria="${item.nombre}">
                         <img src="${item.imagen}" alt="${item.nombre}">
                         <p>${item.nombre}</p>
                         </div>
                     `;
-                });
+        });
 
-                $("#containerPrincipalGaleriaImagenes").html(html);
-            })
-            .then(() => {
-                $(document).on("click", ".categoria", function () {
-                    const categoriaSeleccionada = $(this).data("categoria");
+        $("#containerPrincipalGaleriaImagenes").html(html);
+      })
+      .then(() => {
+        $(document).on("click", ".categoria", function () {
+          const categoriaSeleccionada = $(this).data("categoria");
 
-                    fetch("../json/galeriaImagenesProductos.json")
-                        .then((response) => response.json())
-                        .then((data) => {
-                            const imagenesFiltradas = data.filter(
-                                (item) => item.categoria === categoriaSeleccionada
-                            );
+          fetch("../json/galeriaImagenesProductos.json")
+            .then((response) => response.json())
+            .then((data) => {
+              const imagenesFiltradas = data.filter(
+                (item) => item.categoria === categoriaSeleccionada
+              );
 
-                            let html = "";
-                            imagenesFiltradas.forEach((item) => {
-                                html += `
+              let html = "";
+              imagenesFiltradas.forEach((item) => {
+                html += `
 
                         <div class="card">
                             <img src="${item.imagen}"">
@@ -235,66 +223,63 @@ $(document).ready(
                         </div>
                         
                         `;
-                            });
+              });
 
-                            $("#containerProductosGaleriaImagenes").html(html);
-                        });
-                });
-            })
-            .catch((error) => {
-                console.error("Error al cargar la galería principal:", error);
+              $("#containerProductosGaleriaImagenes").html(html);
             });
-
-
-        // ================= Galeria de imagenes =================
-
-        // ================= Seccion de los tamaños de los cuadros en la galeria de imagenes =================
-
-
-        fetch("../json/imagenes.json")
-            .then(response => response.json())
-            .then(data => {
-                const medidas = data.find(item => item.nombre === "Medidas");
-                if (medidas) {
-
-                    let html = `<img src="${medidas.imagen}" alt="${medidas.descripcion}" />`
-
-                    $("#seccion-imagen").html(html)
-                }
-            });
-
-
-        $("#btn-imagen").click(function () {
-            $("#seccion-imagen").slideToggle();
-
         });
-        // ================= Seccion de los tamaños de los cuadros en la galeria de imagenes =================
+      })
+      .catch((error) => {
+        console.error("Error al cargar la galería principal:", error);
+      });
 
-        // ================= Seccion del carrusel de la galeria de imagenes =================
+    // ================= Galeria de imagenes =================
 
-        fetch("../json/imagenesCarouselGaleriaImagenes.json")
-            .then(response => response.json())
-            .then(data => {
-                let html = "";
+    // ================= Seccion de los tamaños de los cuadros en la galeria de imagenes =================
 
-                data.forEach((item, index) => {
-                    html +=
-                        `
-                        <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                        <img src="${item.imagen}" class="d-block w-100" alt="${item.nombre}">
+    fetch("../json/imagenes.json")
+      .then((response) => response.json())
+      .then((data) => {
+        const medidas = data.find((item) => item.nombre === "Medidas");
+        if (medidas) {
+          let html = `<img src="${medidas.imagen}" alt="${medidas.descripcion}" />`;
+
+          $("#seccion-imagen").html(html);
+        }
+      });
+
+    $("#btn-imagen").click(function () {
+      $("#seccion-imagen").slideToggle();
+    });
+    // ================= Seccion de los tamaños de los cuadros en la galeria de imagenes =================
+
+    // ================= Seccion del carrusel de la galeria de imagenes =================
+
+    fetch("../json/imagenesCarouselGaleriaImagenes.json")
+      .then((response) => response.json())
+      .then((data) => {
+        let html = "";
+
+        data.forEach((item, index) => {
+          html += `
+                        <div class="carousel-item ${
+                          index === 0 ? "active" : ""
+                        }">
+                        <img src="${item.imagen}" class="d-block w-100" alt="${
+            item.nombre
+          }">
                         </div>
 
                     `;
-                });
-
-                $("#carousel-container-galeria").html(html);
-            });
-
-        $("#btn-carrusel").click(function () {
-            $("#carousel-section").slideToggle();
         });
 
-        //================= Seccion del carrusel de la galeria de imagenes =================
+        $("#carousel-container-galeria").html(html);
+      });
 
-    }
+    $("#btn-carrusel").click(function () {
+      $("#carousel-section").slideToggle();
+    });
+
+    //================= Seccion del carrusel de la galeria de imagenes =================
+  }
 );

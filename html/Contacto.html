@@ -90,17 +90,17 @@
 
                 <!-- Edad (oculta) -->
                  <!-- poner : type="hidden" -->
-                <input id="edad" name="edad">
+                <input type="hidden" id="edad" name="edad">
 
                 <!-- Rango de ingreso mensual -->
                 <div class="mb-3">
                     <label for="ingreso" class="form-label fs-5">Rango de ingreso mensual</label>
                     <select class="form-select" id="ingreso" name="ingreso" required>
                         <option value="">Seleccione un rango</option>
-                        <option value="menos_300">Menos de ₡300.000</option>
-                        <option value="300_600">₡300.000 - ₡600.000</option>
-                        <option value="600_900">₡600.000 - ₡900.000</option>
-                        <option value="900_mas">Más de ₡900.000</option>
+                        <option value="Menos_de_300Mil">Menos de ₡300.000</option>
+                        <option value="Mas_de_300Mil_y_Menos_de_600mil">₡300.000 - ₡600.000</option>
+                        <option value="Mas_de_600Mil_y_Menos_de_900mil">₡600.000 - ₡900.000</option>
+                        <option value="Menos_de_900Mil">Más de ₡900.000</option>
                     </select>
                 </div>
 
@@ -125,7 +125,7 @@
                 <!-- Grado académico -->
                 <div class="mb-3">
                     <label for="grado" class="form-label fs-5">Grado académico (puede seleccionar varios)</label>
-                    <select class="form-select" id="grado" name="grado[]" multiple required>
+                    <select class="form-select" id="grado" name="grado" multiple required>
                         <option value="secundaria">Secundaria</option>
                         <option value="tecnico">Técnico</option>
                         <option value="diplomado">Diplomado</option>
@@ -139,7 +139,7 @@
                 <!-- Mensaje -->
                 <div class="mb-3">
                     <label for="mensaje" class="form-label fs-5">Mensaje</label>
-                    <textarea class="form-control" id="mensaje" name="message" rows="4" required></textarea>
+                    <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
                 </div>
 
                 <!-- Botón enviar -->
@@ -161,7 +161,7 @@
                 <p><strong>Dirección:</strong> San Rafael de Alajuela, Urbanización San Gerardo Primera entrada Tercer
                     casa a mano derecha.</p>
                 <p><strong>Teléfono:</strong> +506 7126 2301</p>
-                <p><strong>Email:</strong> ale1010192@gmail.com Verdadero: arteenlienzocr@gmail.com</p>
+                <p><strong>Email:</strong> arteenlienzocr@gmail.com</p>
 
 
                 <div class="container">
