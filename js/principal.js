@@ -13,14 +13,14 @@ $(document).ready(
                 <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
                     <div class="navbar-nav">
                         <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center gap-2 gap-lg-4">
-                            <a href="Home.html" class="nav-item nav-link texto-cuerpo">Home</a>
-                            <a href="acercaDe.html" class="nav-item nav-link texto-cuerpo">Acerca de..</a>
+                            <a href="../index.html" class="nav-item nav-link texto-cuerpo">Home</a>
+                            <a href="../html/acercaDe.html" class="nav-item nav-link texto-cuerpo">Acerca de..</a>
 
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle texto-cuerpo" data-bs-toggle="dropdown">Más
                                     Info</a>
                                 <div class="dropdown-menu bg-light m-0">
-                                    <a href="galeriaImagenes.html" class="dropdown-item textoDropdown">Galería Arte</a>
+                                    <a href="../html/galeriaImagenes.html" class="dropdown-item textoDropdown">Galería Arte</a>
                                     <!--  <a href="#" class="dropdown-item textoDropdown">Free Quote</a>
                                     <a href="#" class="dropdown-item textoDropdown">Our Team</a>
                                     <a href="#" class="dropdown-item textoDropdown">Testimonial</a> -->
@@ -28,7 +28,7 @@ $(document).ready(
                                 </div>
                             </div>
 
-                            <a href="Contacto.html" class="nav-item nav-link texto-cuerpo">Contacto</a>
+                            <a href="../html/Contacto.html" class="nav-item nav-link texto-cuerpo">Contacto</a>
                         </div>
                     </div>
                 </div>
