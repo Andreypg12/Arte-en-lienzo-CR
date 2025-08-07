@@ -1,8 +1,9 @@
 $(document).ready(
-  // ================= generador del Nav Bar =================
-  function () {
-    document.querySelectorAll('[name="navbar"]').forEach((element) => {
-      element.innerHTML = `
+    // ================= generador del Nav Bar =================
+    function () {
+
+        document.querySelectorAll('[name="navbar"]').forEach((element) => {
+            element.innerHTML = `
             <div class="container-fluid">
                 <button class="navbar-toggler me-3" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarCollapse">
@@ -84,202 +85,222 @@ $(document).ready(
             </div>
             `;
 
-      // Todo lo que accede al DOM debe ir aquí dentro ↓↓↓
-      const modal = element.querySelector("#modalPoliticas");
-      const btn = element.querySelector("#btnPoliticas");
-      const btnCerrar = element.querySelector("#btnCerrarModal");
+            // Todo lo que accede al DOM debe ir aquí dentro ↓↓↓
+            const modal = element.querySelector("#modalPoliticas");
+            const btn = element.querySelector("#btnPoliticas");
+            const btnCerrar = element.querySelector("#btnCerrarModal");
 
-      // Podrías tener una X con clase close, si no existe, ignóralo
-      const spanClose = element.querySelector(".close");
+            // Podrías tener una X con clase close, si no existe, ignóralo
+            const spanClose = element.querySelector(".close");
 
-      modal.style.display = "none";
+            modal.style.display = "none";
 
-      // Abrir modal
-      btn.addEventListener("click", (e) => {
-        e.preventDefault();
-        modal.style.display = "flex"; // o 'block' si estás usando estilos básicos
-      });
+            // Abrir modal
+            btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                modal.style.display = "flex"; // o 'block' si estás usando estilos básicos
+            });
 
-      // Cerrar con botón
-      btnCerrar.addEventListener("click", () => {
-        modal.style.display = "none";
-      });
+            // Cerrar con botón
+            btnCerrar.addEventListener("click", () => {
+                modal.style.display = "none";
+            });
 
-      // Cerrar con la X si existe
-      if (spanClose) {
-        spanClose.addEventListener("click", () => {
-          modal.style.display = "none";
+            // Cerrar con la X si existe
+            if (spanClose) {
+                spanClose.addEventListener("click", () => {
+                    modal.style.display = "none";
+                });
+            }
+
+            // Cerrar haciendo clic fuera del contenido
+            window.addEventListener("click", (e) => {
+                if (e.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
         });
-      }
 
-      // Cerrar haciendo clic fuera del contenido
-      window.addEventListener("click", (e) => {
-        if (e.target === modal) {
-          modal.style.display = "none";
+        // ================= generador del Nav Bar =================
+
+
+        // ================= Llamado al api =================
+
+        fetch("json/apiImagenes.json")
+            .then((response) => response.json())
+            .then((data) => {
+
+                ponerImagenBanner(data.imagenes);
+
+                ponerImagenesMedidas(data.imagenes)
+
+                ponerImagenesCarouselPrincipal(data.imagenesCarouselPrincipal);
+
+                ponerImagenesGaleriaPrincipal(data.galeriaImagenes)
+
+                ponerImagenesCarouselGaleriaImagenes(data.imagenesCarouselGaleriaImagenes)
+
+                
+                // ================= Galeria de imagenes de los productos =================
+
+                $(document).on("click", ".categoria", function () {
+                    const categoriaSeleccionada = $(this).data("categoria");
+
+                    const imagenesFiltradas = data.galeriaImagenesProductos.filter(
+                        (item) => item.categoria === categoriaSeleccionada
+                    );
+
+                    let htmlProductos = "";
+                    imagenesFiltradas.forEach((item) => {
+                        htmlProductos += `
+                        <div class="card">
+                            <img src="${item.imagen}">
+                            <p class="precio" data-colones="${item.precio}">₡${item.precio}</p>
+                        </div>
+                        `;
+                    });
+
+                    $("#containerProductosGaleriaImagenes").html(htmlProductos);
+                });
+
+                // ================= Galeria de imagenes de los productos =================
+
+
+            }).catch(error => {
+                console.error("Error al cargar JSON:", error);
+            });
+
+        // ================= Llamado al api =================
+
+
+        // ================= Imagen del banner =================
+
+        function ponerImagenBanner(data) {
+
+            const banner = data.find((item) => item.nombre === "Banner");
+
+            if (banner) {
+                document.querySelectorAll('[name="banner"]').forEach((element) => {
+                    element.innerHTML = `<img src="${banner.imagen}" alt="${banner.descripcion}" />`;
+                });
+            }
         }
-      });
-    });
 
-    // ================= generador del Nav Bar =================
+        // ================= Imagen del banner =================
 
-    // ================= Imagen del banner =================
 
-    fetch("../json/imagenes.json")
-      .then((response) => response.json())
-      .then((data) => {
-        const banner = data.find((item) => item.nombre === "Banner");
-        if (banner) {
-          document.querySelectorAll('[name="banner"]').forEach((element) => {
-            element.innerHTML = `<img src="${banner.imagen}" alt="${banner.descripcion}" />`;
-          });
+        // ================= Seccion de los tamaños de los cuadros en la galeria de imagenes =================
+
+        function ponerImagenesMedidas(data) {
+            const medidas = data.find((item) => item.nombre === "Medidas");
+
+            if (medidas) {
+                let html = `<img src="${medidas.imagen}" alt="${medidas.descripcion}" />`;
+
+                $("#seccion-imagen").html(html);
+            }
         }
-      });
 
-    // ================= Imagen del banner =================
+        // ================= Seccion de los tamaños de los cuadros en la galeria de imagenes =================
 
-    // ================= Carousel de la página principal =================
 
-    fetch("../json/imagenesCarousel.json")
-      .then((response) => response.json())
-      .then((data) => {
-        let html = "";
+        // ================= Carousel de la página principal =================
 
-        data.forEach((item, index) => {
-          html += `
-                        <div class="carousel-item ${
-                          index === 0 ? "active" : ""
-                        }">
-                        <img src="${
-                          item.imagen
-                        }" class="d-block w-100 carousel-img" alt="${
-            item.nombre
-          }">
+        function ponerImagenesCarouselPrincipal(data) {
+
+            let html = "";
+
+            data.forEach((item, index) => {
+                html += `
+                        <div class="carousel-item ${index === 0 ? "active" : ""
+                    }">
+                        <img src="${item.imagen
+                    }" class="d-block w-100 carousel-img" alt="${item.nombre
+                    }">
                         </div>
                     `;
-        });
+            });
 
-        $("#carousel-container").html(html);
-      });
+            $("#carousel-container").html(html);
+        }
 
-    // ================= Carousel de la página principal =================
+        // ================= Carousel de la página principal =================
 
-    // ================= Calculo de edad en formulario =================
 
-    $("#FechaNacimiento").on("change", function () {
-      const fechaNacimiento = new Date($(this).val());
-      const fechaActual = new Date();
+        // ================= Galeria principal =================
 
-      let edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
-      const mes = fechaActual.getMonth() - fechaNacimiento.getMonth();
+        function ponerImagenesGaleriaPrincipal(data) {
+            let html = "";
 
-      if (
-        mes < 0 ||
-        (mes === 0 && fechaActual.getDate() < fechaNacimiento.getDate())
-      ) {
-        edad--;
-      }
-
-      $("#edad").val(edad);
-    });
-
-    // ================= Calculo de edad en formulario =================
-
-    // ================= Galeria de imagenes =================
-
-    fetch("../json/galeriaImagenes.json")
-      .then((response) => response.json())
-      .then((data) => {
-        let html = "";
-
-        data.forEach((item) => {
-          html += `
+            data.forEach((item) => {
+                html += `
                         <div class="card categoria" data-categoria="${item.nombre}">
                         <img src="${item.imagen}" alt="${item.nombre}">
                         <p>${item.nombre}</p>
                         </div>
                     `;
-        });
-
-        $("#containerPrincipalGaleriaImagenes").html(html);
-      })
-      .then(() => {
-        $(document).on("click", ".categoria", function () {
-          const categoriaSeleccionada = $(this).data("categoria");
-
-          fetch("../json/galeriaImagenesProductos.json")
-            .then((response) => response.json())
-            .then((data) => {
-              const imagenesFiltradas = data.filter(
-                (item) => item.categoria === categoriaSeleccionada
-              );
-
-              let html = "";
-              imagenesFiltradas.forEach((item) => {
-                html += `
-
-                        <div class="card">
-                            <img src="${item.imagen}"">
-                            <p class="precio" data-colones="${item.precio}" >₡${item.precio}</p>
-                        </div>
-                        
-                        `;
-              });
-
-              $("#containerProductosGaleriaImagenes").html(html);
             });
-        });
-      })
-      .catch((error) => {
-        console.error("Error al cargar la galería principal:", error);
-      });
 
-    // ================= Galeria de imagenes =================
-
-    // ================= Seccion de los tamaños de los cuadros en la galeria de imagenes =================
-
-    fetch("../json/imagenes.json")
-      .then((response) => response.json())
-      .then((data) => {
-        const medidas = data.find((item) => item.nombre === "Medidas");
-        if (medidas) {
-          let html = `<img src="${medidas.imagen}" alt="${medidas.descripcion}" />`;
-
-          $("#seccion-imagen").html(html);
+            $("#containerPrincipalGaleriaImagenes").html(html);
         }
-      });
 
-    $("#btn-imagen").click(function () {
-      $("#seccion-imagen").slideToggle();
-    });
-    // ================= Seccion de los tamaños de los cuadros en la galeria de imagenes =================
+        // ================= Galeria principal =================
 
-    // ================= Seccion del carrusel de la galeria de imagenes =================
 
-    fetch("../json/imagenesCarouselGaleriaImagenes.json")
-      .then((response) => response.json())
-      .then((data) => {
-        let html = "";
+        //================= Seccion del carrusel de la galeria de imagenes =================
 
-        data.forEach((item, index) => {
-          html += `
-                        <div class="carousel-item ${
-                          index === 0 ? "active" : ""
-                        }">
-                        <img src="${item.imagen}" class="d-block w-100" alt="${
-            item.nombre
-          }">
+        function ponerImagenesCarouselGaleriaImagenes(data) {
+            let html = "";
+
+            data.forEach((item, index) => {
+                html += `
+                        <div class="carousel-item ${index === 0 ? "active" : ""
+                    }">
+                        <img src="${item.imagen}" class="d-block w-100" alt="${item.nombre
+                    }">
                         </div>
 
                     `;
+            });
+
+            $("#carousel-container-galeria").html(html);
+        }
+
+        //================= Seccion del carrusel de la galeria de imagenes =================
+
+
+        // ================= Parte de los botones de la galeria de imagenes =================
+
+        $("#btn-imagen").click(function () {
+            $("#seccion-imagen").slideToggle();
         });
 
-        $("#carousel-container-galeria").html(html);
-      });
+        $("#btn-carrusel").click(function () {
+            $("#carousel-section").slideToggle();
+        });
 
-    $("#btn-carrusel").click(function () {
-      $("#carousel-section").slideToggle();
-    });
+        // ================= Parte de los botones de la galeria de imagenes =================
 
-    //================= Seccion del carrusel de la galeria de imagenes =================
-  }
+
+        // ================= Calculo de edad en formulario =================
+
+        $("#FechaNacimiento").on("change", function () {
+            const fechaNacimiento = new Date($(this).val());
+            const fechaActual = new Date();
+
+            let edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+            const mes = fechaActual.getMonth() - fechaNacimiento.getMonth();
+
+            if (
+                mes < 0 ||
+                (mes === 0 && fechaActual.getDate() < fechaNacimiento.getDate())
+            ) {
+                edad--;
+            }
+
+            $("#edad").val(edad);
+        });
+
+        // ================= Calculo de edad en formulario =================
+    }
 );

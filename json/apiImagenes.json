@@ -1,0 +1,348 @@
+{
+    "galeriaImagenes": [
+        {
+            "nombre": "Estuches",
+            "imagen": "../img/cuadromoto.png"
+        },
+        {
+            "nombre": "Articulos",
+            "imagen": "../img/random6.png"
+        },
+        {
+            "nombre": "Cuadros de mascotas",
+            "imagen": "../img/cuadroMascota16.png"
+        },
+        {
+            "nombre": "Personas y retratos",
+            "imagen": "../img/siluetas y personas.png"
+        },
+        {
+            "nombre": "Mini cuadros",
+            "imagen": "../img/cuadromascotapequeño6.png"
+        },
+        {
+            "nombre": "Cuadros de vehículos",
+            "imagen": "../img/cuadroCarro.png"
+        }
+    ],
+    "imagenes": [
+        {
+            "nombre": "Banner",
+            "descripcion": "Imagen del banner",
+            "imagen": "../img/tituloBanner.jpg"
+        },
+        {
+            "nombre": "Medidas",
+            "descripcion": "Imagen de las medidas",
+            "imagen": "../img/TamanosCuadros.jpg"
+        }
+    ],
+    "imagenesCarouselPrincipal": [
+        {
+            "nombre": "Arte",
+            "imagen": "../img/bannerv5pequeño.png"
+        },
+        {
+            "nombre": "Arte",
+            "imagen": "../img/bannerv3.png"
+        },
+        {
+            "nombre": "Arte",
+            "imagen": "../img/bannerv4.png"
+        },
+        {
+            "nombre": "Arte",
+            "imagen": "../img/bannerv6.png"
+        }
+    ],
+    "imagenesCarouselGaleriaImagenes": [
+        {
+            "nombre": "Imagen1",
+            "imagen": "../img/carouselInfo3.jpg"
+        },
+        {
+            "nombre": "Imagen2",
+            "imagen": "../img/carouselInfo1.jpg"
+        },
+        {
+            "nombre": "Imagen3",
+            "imagen": "../img/carouselInfo2.jpg"
+        },
+        {
+            "nombre": "Imagen4",
+            "imagen": "../img/carouselInfo7.jpg"
+        },
+        {
+            "nombre": "Imagen5",
+            "imagen": "../img/carouselInfo4.jpg"
+        },
+        {
+            "nombre": "Imagen6",
+            "imagen": "../img/carouselInfo5.jpg"
+        },
+        {
+            "nombre": "Imagen7",
+            "imagen": "../img/carouselInfo6.jpg"
+        },
+        {
+            "nombre": "Imagen8",
+            "imagen": "../img/tamanosEstuches.jpg"
+        },
+        {
+            "nombre": "Imagen9",
+            "imagen": "../img/carouselInfo8.jpg"
+        }
+    ],
+    "galeriaImagenesProductos": [
+        {
+            "categoria": "Estuches",
+            "imagen": "../img/estuche1.png",
+            "precio": "10000"
+        },
+        {
+            "categoria": "Estuches",
+            "imagen": "../img/estuche2.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Estuches",
+            "imagen": "../img/estuche3.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Estuches",
+            "imagen": "../img/estuche4.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Estuches",
+            "imagen": "../img/estuche5.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Estuches",
+            "imagen": "../img/estuche6.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Estuches",
+            "imagen": "../img/estuche7.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Estuches",
+            "imagen": "../img/estuche8.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Estuches",
+            "imagen": "../img/estuche9.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Estuches",
+            "imagen": "../img/estuche10.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Articulos",
+            "imagen": "../img/random1.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Articulos",
+            "imagen": "../img/random2.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Articulos",
+            "imagen": "../img/random3.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Articulos",
+            "imagen": "../img/random4.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Articulos",
+            "imagen": "../img/random5.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Articulos",
+            "imagen": "../img/random6.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Articulos",
+            "imagen": "../img/random7.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Cuadros de mascotas",
+            "imagen": "../img/cuadroMascota1.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Cuadros de mascotas",
+            "imagen": "../img/cuadroMascota2.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Cuadros de mascotas",
+            "imagen": "../img/cuadroMascota3.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Cuadros de mascotas",
+            "imagen": "../img/cuadroMascota4.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Cuadros de mascotas",
+            "imagen": "../img/cuadroMascota5.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Cuadros de mascotas",
+            "imagen": "../img/cuadroMascota6.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Cuadros de mascotas",
+            "imagen": "../img/cuadroMascota7.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Cuadros de mascotas",
+            "imagen": "../img/cuadroMascota8.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Cuadros de mascotas",
+            "imagen": "../img/cuadroMascota9.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Cuadros de mascotas",
+            "imagen": "../img/cuadroMascota10.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Cuadros de mascotas",
+            "imagen": "../img/cuadroMascota11.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Cuadros de mascotas",
+            "imagen": "../img/cuadroMascota12.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Cuadros de mascotas",
+            "imagen": "../img/cuadroMascota13.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Cuadros de mascotas",
+            "imagen": "../img/cuadroMascota14.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Cuadros de mascotas",
+            "imagen": "../img/cuadroMascota15.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Cuadros de mascotas",
+            "imagen": "../img/cuadroMascota16.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Personas y retratos",
+            "imagen": "../img/cuadro1.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Personas y retratos",
+            "imagen": "../img/cuadro2.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Personas y retratos",
+            "imagen": "../img/cuadro3.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Personas y retratos",
+            "imagen": "../img/cuadro5.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Personas y retratos",
+            "imagen": "../img/cuadro6.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Personas y retratos",
+            "imagen": "../img/cuadro7.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Personas y retratos",
+            "imagen": "../img/cuadro8.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Personas y retratos",
+            "imagen": "../img/cuadro9.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Mini cuadros",
+            "imagen": "../img/cuadromascotapequeño.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Mini cuadros",
+            "imagen": "../img/cuadromascotapequeño2.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Mini cuadros",
+            "imagen": "../img/cuadromascotapequeño3.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Mini cuadros",
+            "imagen": "../img/cuadromascotapequeño4.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Mini cuadros",
+            "imagen": "../img/cuadromascotapequeño5.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Mini cuadros",
+            "imagen": "../img/cuadromascotapequeño6.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Cuadros de vehículos",
+            "imagen": "../img/cuadroCarro2.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Cuadros de vehículos",
+            "imagen": "../img/cuadroCarro3.png",
+            "precio": "0"
+        },
+        {
+            "categoria": "Cuadros de vehículos",
+            "imagen": "../img/cuadroCarro4.png",
+            "precio": "0"
+        }
+    ]
+}
