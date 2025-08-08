@@ -1,4 +1,46 @@
 {
+    "imagenes": [
+        {
+            "nombre": "Banner",
+            "descripcion": "Imagen del banner",
+            "imagen": "../img/tituloBanner.jpg"
+        },
+        {
+            "nombre": "Medidas",
+            "descripcion": "Imagen de las medidas",
+            "imagen": "../img/TamanosCuadros.jpg"
+        },
+        {
+            "nombre": "CuadroMascotaindex",
+            "descripcion": "Obra de arte de una mascota",
+            "imagen": "../img/cuadromascota14.png"
+        },
+        {
+            "nombre": "ImagenYoen",
+            "descripcion": "Yoen Arguedas",
+            "imagen": "../img/Yoen.jpg"
+        },
+        {
+            "nombre": "ImagenYoen_Yoman",
+            "descripcion": "Yoen y Yoman Arguedas",
+            "imagen": "../img/Yoen y Yoman.jpg"
+        },
+        {
+            "nombre": "ImagenYoman",
+            "descripcion": "Yoman Arguedas",
+            "imagen": "../img/Yoman.jpg"
+        },
+        {
+            "nombre": "ImagenAlejandro",
+            "descripcion": "Alejandro Serrano",
+            "imagen": "../img/AlejandroN.jpg"
+        },
+        {
+            "nombre": "ImagenAndrey",
+            "descripcion": "Andrey Pérez",
+            "imagen": "../img/AndreyN.jpg"
+        }
+    ],
     "galeriaImagenes": [
         {
             "nombre": "Estuches",
@@ -25,18 +67,6 @@
             "imagen": "../img/cuadroCarro.png"
         }
     ],
-    "imagenes": [
-        {
-            "nombre": "Banner",
-            "descripcion": "Imagen del banner",
-            "imagen": "../img/tituloBanner.jpg"
-        },
-        {
-            "nombre": "Medidas",
-            "descripcion": "Imagen de las medidas",
-            "imagen": "../img/TamanosCuadros.jpg"
-        }
-    ],
     "imagenesCarouselPrincipal": [
         {
             "nombre": "Arte",
@@ -53,6 +83,48 @@
         {
             "nombre": "Arte",
             "imagen": "../img/bannerv6.png"
+        }
+    ],
+    "imagenesCartasIndex": [
+        {
+            "nombre": "Personas y Siluetas",
+            "subTexto": "",
+            "alt": "Cuandro de una persona",
+            "clase": "large-top",
+            "categoria": "izquierda",
+            "imagen": "../img/cuadro5.png"
+        },
+        {
+            "nombre": "Automóviles",
+            "subTexto": "",
+            "alt": "Cuadro de un automóvil",
+            "clase": "small-bottom",
+            "categoria": "izquierda",
+            "imagen": "../img/CuadroCarro3.png"
+        },
+        {
+            "nombre": "Llaveros y collares",
+            "subTexto": "",
+            "alt": "Cuadro de Llavero",
+            "clase": "small-top",
+            "categoria": "centro",
+            "imagen": "../img/random5.png"
+        },
+        {
+            "nombre": "Cuadros en miniatura",
+            "subTexto": "Aplica para cualquier cuadro",
+            "alt": "Cuadro en miniatura de gatito",
+            "clase": "large-bottom",
+            "categoria": "centro",
+            "imagen": "../img/cuadroMascotaPequeño2.png"
+        },
+        {
+            "nombre": "Mascotas",
+            "subTexto": "Cuadros estrellas!!",
+            "alt": "Cuadro de mascota",
+            "clase": "full-height",
+            "categoria": "derecha",
+            "imagen": "../img/cuadromascota13.png"
         }
     ],
     "imagenesCarouselGaleriaImagenes": [

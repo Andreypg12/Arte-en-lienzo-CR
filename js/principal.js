@@ -126,13 +126,12 @@ $(document).ready(
 
         // ================= Llamado al api =================
 
-        fetch("json/apiImagenes.json")
+        // fetch("https://andreypg12.github.io/Api_imagenes_arte_en_lienzo/json/apiImagenes.json")
+        fetch("../json/apiImagenes.json")
             .then((response) => response.json())
             .then((data) => {
 
-                ponerImagenBanner(data.imagenes);
-
-                ponerImagenesMedidas(data.imagenes)
+                ponerImagenesIndividuales(data.imagenes);
 
                 ponerImagenesCarouselPrincipal(data.imagenesCarouselPrincipal);
 
@@ -140,7 +139,9 @@ $(document).ready(
 
                 ponerImagenesCarouselGaleriaImagenes(data.imagenesCarouselGaleriaImagenes)
 
-                
+                ponerImagenesCartasIndex(data.imagenesCartasIndex)
+
+
                 // ================= Galeria de imagenes de los productos =================
 
                 $(document).on("click", ".categoria", function () {
@@ -173,9 +174,10 @@ $(document).ready(
         // ================= Llamado al api =================
 
 
-        // ================= Imagen del banner =================
 
-        function ponerImagenBanner(data) {
+        function ponerImagenesIndividuales(data) {
+
+            // ================= Imagen del banner =================
 
             const banner = data.find((item) => item.nombre === "Banner");
 
@@ -183,15 +185,14 @@ $(document).ready(
                 document.querySelectorAll('[name="banner"]').forEach((element) => {
                     element.innerHTML = `<img src="${banner.imagen}" alt="${banner.descripcion}" />`;
                 });
+
             }
-        }
 
-        // ================= Imagen del banner =================
+            // ================= Imagen del banner =================
 
 
-        // ================= Seccion de los tamaños de los cuadros en la galeria de imagenes =================
+            // ================= Seccion de los tamaños de los cuadros en la galeria de imagenes =================
 
-        function ponerImagenesMedidas(data) {
             const medidas = data.find((item) => item.nombre === "Medidas");
 
             if (medidas) {
@@ -199,9 +200,72 @@ $(document).ready(
 
                 $("#seccion-imagen").html(html);
             }
-        }
 
-        // ================= Seccion de los tamaños de los cuadros en la galeria de imagenes =================
+            // ================= Seccion de los tamaños de los cuadros en la galeria de imagenes =================
+
+
+            // ================= Cuadro de mascota en index =================
+
+            const cuandroMascota = data.find((item) => item.nombre === "CuadroMascotaindex");
+
+            if (cuandroMascota) {
+                let html = `<img src="${cuandroMascota.imagen}" alt="${cuandroMascota.descripcion}" class="circular-image"/>`;
+
+                $("#cuadroMascotaIndex").html(html);
+            }
+
+            // ================= Cuadro de mascota en index =================
+
+
+            // ================= Parte de imagenes de las dueñas de Arte y lienzo =================
+
+            const Yoen = data.find((item) => item.nombre === "ImagenYoen");
+
+            if (Yoen) {
+                let html = `<img src="${Yoen.imagen}" alt="${Yoen.descripcion}" class="imagen-somos"/>`;
+
+                $("#Yoen").html(html);
+            }
+
+            const Yoen_Yoman = data.find((item) => item.nombre === "ImagenYoen_Yoman");
+
+            if (Yoen_Yoman) {
+                let html = `<img src="${Yoen_Yoman.imagen}" alt="${Yoen_Yoman.descripcion}" class="imagen-somos"/>`;
+
+                $("#Yoen_Yoman").html(html);
+            }
+
+            const Yoman = data.find((item) => item.nombre === "ImagenYoman");
+
+            if (Yoman) {
+                let html = `<img src="${Yoman.imagen}" alt="${Yoman.descripcion}" class="imagen-somos"/>`;
+
+                $("#Yoman").html(html);
+            }
+
+            // ================= Parte de imagenes de las dueñas de Arte y lienzo =================
+
+
+            // ================= Parte de autores =================
+
+            const Alejandro = data.find((item) => item.nombre === "ImagenAlejandro");
+
+            if (Alejandro) {
+                let html = `<img src="${Alejandro.imagen}" alt="${Alejandro.descripcion}">`;
+
+                $("#Alejandro").html(html);
+            }
+
+            const Andrey = data.find((item) => item.nombre === "ImagenAndrey");
+
+            if (Andrey) {
+                let html = `<img src="${Andrey.imagen}" alt="${Andrey.descripcion}">`;
+
+                $("#Andrey").html(html);
+            }
+
+            // ================= Parte de autores =================
+        }
 
 
         // ================= Carousel de la página principal =================
@@ -269,6 +333,41 @@ $(document).ready(
         //================= Seccion del carrusel de la galeria de imagenes =================
 
 
+        //================= Seccion de las cartas en el index =================
+
+        function ponerImagenesCartasIndex(data) {
+
+            data.forEach((item) => {
+
+                let html = `
+                    <figure class="art-item ${item.clase}">
+                        <img src="${item.imagen}" alt="${item.alt}">
+                        <figcaption class="image-caption">
+                            <p class="caption-text">${item.nombre}</p>
+                            <p class="caption-subtext">${item.subTexto}</p>
+                        </figcaption>
+                    </figure>
+                    `;
+
+                switch (item.categoria) {
+                    case "izquierda":
+                        $("#izquierda").append(html);
+                        break;
+
+                    case "centro":
+                        $("#centro").append(html);
+                        break;
+
+                    default:
+                        $("#derecha").append(html);
+                        break;
+                }
+            });
+        }
+
+        //================= Seccion de las cartas en el index =================
+
+
         // ================= Parte de los botones de la galeria de imagenes =================
 
         $("#btn-imagen").click(function () {
@@ -307,29 +406,29 @@ $(document).ready(
 
         // ================= Navegacion interactiva =================
 
-      $(document).ready(function () {
+        $(document).ready(function () {
 
-  // 1. Detectar URL actual y marcar el enlace activo individual
-  $(".navbar-nav .nav-link").each(function () {
-    if (this.href === window.location.href) {
-      $(this).addClass("active");
-    }
-  });
+            // 1. Detectar URL actual y marcar el enlace activo individual
+            $(".navbar-nav .nav-link").each(function () {
+                if (this.href === window.location.href) {
+                    $(this).addClass("active");
+                }
+            });
 
-  // 2. Al hacer clic, cambiar clase active
-  $(".navbar-nav .nav-link").on("click", function () {
-    $(".navbar-nav .nav-link").removeClass("active");
-    $(this).addClass("active");
-  });
+            // 2. Al hacer clic, cambiar clase active
+            $(".navbar-nav .nav-link").on("click", function () {
+                $(".navbar-nav .nav-link").removeClass("active");
+                $(this).addClass("active");
+            });
 
-  // 3. Marcar dropdown activo si estamos en galeriaImagenes.html o autores.html
-  const currentPage = window.location.pathname.split("/").pop();
+            // 3. Marcar dropdown activo si estamos en galeriaImagenes.html o autores.html
+            const currentPage = window.location.pathname.split("/").pop();
 
-  if (currentPage === "galeriaImagenes.html" || currentPage === "autores.html") {
-    $(".navbar-nav .nav-link").removeClass("active");
-    $(".nav-item.dropdown > .nav-link.dropdown-toggle").addClass("active");
-  }
-});
+            if (currentPage === "galeriaImagenes.html" || currentPage === "autores.html") {
+                $(".navbar-nav .nav-link").removeClass("active");
+                $(".nav-item.dropdown > .nav-link.dropdown-toggle").addClass("active");
+            }
+        });
 
         // ================= Navegacion interactiva =================
     }
