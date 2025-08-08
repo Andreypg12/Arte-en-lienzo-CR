@@ -302,5 +302,35 @@ $(document).ready(
         });
 
         // ================= Calculo de edad en formulario =================
+
+
+
+        // ================= Navegacion interactiva =================
+
+      $(document).ready(function () {
+
+  // 1. Detectar URL actual y marcar el enlace activo individual
+  $(".navbar-nav .nav-link").each(function () {
+    if (this.href === window.location.href) {
+      $(this).addClass("active");
+    }
+  });
+
+  // 2. Al hacer clic, cambiar clase active
+  $(".navbar-nav .nav-link").on("click", function () {
+    $(".navbar-nav .nav-link").removeClass("active");
+    $(this).addClass("active");
+  });
+
+  // 3. Marcar dropdown activo si estamos en galeriaImagenes.html o autores.html
+  const currentPage = window.location.pathname.split("/").pop();
+
+  if (currentPage === "galeriaImagenes.html" || currentPage === "autores.html") {
+    $(".navbar-nav .nav-link").removeClass("active");
+    $(".nav-item.dropdown > .nav-link.dropdown-toggle").addClass("active");
+  }
+});
+
+        // ================= Navegacion interactiva =================
     }
 );
