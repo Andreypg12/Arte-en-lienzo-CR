@@ -223,11 +223,7 @@ $(document).ready(
 
             const medidas = data.find((item) => item.nombre === "Medidas");
 
-            if (medidas) {
-                let html = `<img src="${medidas.imagen}" alt="${medidas.descripcion}" />`;
-
-                $("#seccion-imagen").html(html);
-            }
+            ponerImagenSola(medidas, "#seccion-imagen", "")
 
             // ================= Seccion de los tamaños de los cuadros en la galeria de imagenes =================
 
@@ -237,11 +233,7 @@ $(document).ready(
                 (item) => item.nombre === "CuadroMascotaindex"
             );
 
-            if (cuandroMascota) {
-                let html = `<img src="${cuandroMascota.imagen}" alt="${cuandroMascota.descripcion}" class="circular-image"/>`;
-
-                $("#cuadroMascotaIndex").html(html);
-            }
+            ponerImagenSola(cuandroMascota, "#cuadroMascotaIndex", "circular-image")
 
             // ================= Cuadro de mascota en index =================
 
@@ -249,29 +241,19 @@ $(document).ready(
 
             const Yoen = data.find((item) => item.nombre === "ImagenYoen");
 
-            if (Yoen) {
-                let html = `<img src="${Yoen.imagen}" alt="${Yoen.descripcion}" class="imagen-somos"/>`;
+            ponerImagenSola(Yoen, "#Yoen", "imagen-somos")
 
-                $("#Yoen").html(html);
-            }
 
             const Yoen_Yoman = data.find(
                 (item) => item.nombre === "ImagenYoen_Yoman"
             );
 
-            if (Yoen_Yoman) {
-                let html = `<img src="${Yoen_Yoman.imagen}" alt="${Yoen_Yoman.descripcion}" class="imagen-somos"/>`;
+            ponerImagenSola(Yoen_Yoman, "#Yoen_Yoman", "imagen-somos")
 
-                $("#Yoen_Yoman").html(html);
-            }
 
             const Yoman = data.find((item) => item.nombre === "ImagenYoman");
 
-            if (Yoman) {
-                let html = `<img src="${Yoman.imagen}" alt="${Yoman.descripcion}" class="imagen-somos"/>`;
-
-                $("#Yoman").html(html);
-            }
+            ponerImagenSola(Yoman, "#Yoman", "imagen-somos")
 
             // ================= Parte de imagenes de las dueñas de Arte y lienzo =================
 
@@ -279,21 +261,27 @@ $(document).ready(
 
             const Alejandro = data.find((item) => item.nombre === "ImagenAlejandro");
 
-            if (Alejandro) {
-                let html = `<img src="${Alejandro.imagen}" alt="${Alejandro.descripcion}">`;
+            ponerImagenSola(Alejandro, "#Alejandro", "")
 
-                $("#Alejandro").html(html);
-            }
 
             const Andrey = data.find((item) => item.nombre === "ImagenAndrey");
 
-            if (Andrey) {
-                let html = `<img src="${Andrey.imagen}" alt="${Andrey.descripcion}">`;
+            ponerImagenSola(Andrey, "#Andrey", "")
 
-                $("#Andrey").html(html);
-            }
+
+            const Nana = data.find((item) => item.nombre === "ImagenNanaAcercaDe");
+
+            ponerImagenSola(Nana, "#imagenNanaAcercaDe", "")
 
             // ================= Parte de autores =================
+        }
+
+        function ponerImagenSola(item, contenedor, clases){
+            if(item){
+                let html = `<img src="${item.imagen}" alt="${item.descripcion}" class="${clases}">`;
+
+                $(contenedor).html(html);
+            }
         }
 
         // ================= Carousel de la página principal =================

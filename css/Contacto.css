@@ -237,26 +237,12 @@ main {
 
 
 /*Footer */
+/* Footer */
 footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--color-6);
-    padding: 15px 5px;
-}
-
-footer div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-footer div p {
-    font-size: 22px;
     text-align: center;
-    color: white;
-    font-family: var(--fontTitle);
-    letter-spacing: 1px;
+    padding: 2rem;
+    background: #222;
+    color: #fff;
 }
 
 /*Final Footer*/

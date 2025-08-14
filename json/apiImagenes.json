@@ -39,6 +39,11 @@
             "nombre": "ImagenAndrey",
             "descripcion": "Andrey Pérez",
             "imagen": "../img/AndreyN.jpg"
+        },
+        {
+            "nombre": "ImagenNanaAcercaDe",
+            "descripcion": "Imagen de Nana",
+            "imagen": "../img/nanaPrimerCuadro.png"
         }
     ],
     "galeriaImagenes": [

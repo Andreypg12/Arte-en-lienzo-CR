@@ -178,11 +178,7 @@
 
 
 .main-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     max-width: 1200px;
-    margin: 50px auto;
     background-color: #2D402B;
     padding: 40px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -210,6 +206,7 @@
     padding: 10px 0;
     margin: 20px 0;
     width: 200px;
+    color: #96ad8d;
 }
 
 .logo-line {
@@ -225,6 +222,8 @@
     color: #666;
     max-width: 500px;
     margin-bottom: 30px;
+    color: #a4c497;
+
 }
 
 .cta-button {
@@ -263,26 +262,26 @@
 
 /* --- Media query para dispositivos pequeños --- */
 @media (max-width: 768px) {
-    .main-container {
+    /* .main-container {
         flex-direction: column;
         padding: 20px;
         margin: 20px auto;
-    }
-
+    } */
+/* 
     .text-column {
         padding-right: 0;
         padding-bottom: 20px;
         text-align: center;
-    }
+    } */
 
-    .logo-container {
+    /* .logo-container {
         margin: 20px auto;
     }
 
     .circular-image {
         width: 300px;
         height: 300px;
-    }
+    } */
 }
 
 /*Fin contenedor informacion relevante*/
@@ -586,18 +585,25 @@
 .footer-curve::before {
     content: "";
     position: absolute;
-    inset: 0; /* top/right/bottom/left: 0 */
-    background-image: url('../img/imagenFooter.png'); /* Ajusta la ruta si es necesario */
-    background-size: cover; /* <--- Menor a 100% para alejar */
+    inset: 0;
+    /* top/right/bottom/left: 0 */
+    background-image: url('../img/imagenFooter.png');
+    /* Ajusta la ruta si es necesario */
+    background-size: cover;
+    /* <--- Menor a 100% para alejar */
     background-position: center;
 
     /* Filtro oscuro encima de la imagen */
-    background-color: rgba(0, 0, 0, 0.1); /* Negro con 50% transparencia */
-    background-blend-mode: darken; /* Mezcla la imagen con el color oscuro */
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Negro con 50% transparencia */
+    background-blend-mode: darken;
+    /* Mezcla la imagen con el color oscuro */
 
-    transform: scale(1.05); /* Evita bordes duros */
+    transform: scale(1.05);
+    /* Evita bordes duros */
     z-index: 0;
-    pointer-events: none; /* No bloquea clics */
+    pointer-events: none;
+    /* No bloquea clics */
 }
 
 
@@ -647,7 +653,8 @@ hr {
 .footer-socials {
     display: flex;
     justify-content: center;
-    gap: 50px; /* espacio entre las dos secciones */
+    gap: 50px;
+    /* espacio entre las dos secciones */
     flex-wrap: wrap;
     margin-top: 20px;
     font-weight: bold;
@@ -667,7 +674,8 @@ hr {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #3d3636; /* azul de ejemplo, cambia por cada red si quieres */
+    background-color: #3d3636;
+    /* azul de ejemplo, cambia por cada red si quieres */
     color: white;
     font-size: 1.2rem;
     transition: transform 0.3s, background-color 0.3s;
@@ -675,7 +683,8 @@ hr {
 
 .footer-socials .social-section a:hover {
     transform: scale(1.2);
-    background-color: #567541; /* color al pasar el mouse */
+    background-color: #567541;
+    /* color al pasar el mouse */
 }
 
 /*Fin footer*/

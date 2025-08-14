@@ -178,11 +178,10 @@ header h1 {
     border-top: 1px solid var(--color-7);
 }
 
+/* Footer */
 footer {
-    background-color: var(--color-secundario);
-    color: white;
     text-align: center;
     padding: 2rem;
-    font-size: 0.9rem;
-    margin-top: auto;
+    background: #222;
+    color: #fff;
 }
