@@ -79,10 +79,6 @@
         {
             "nombre": "Arte",
             "imagen": "../img/bannerv4.png"
-        },
-        {
-            "nombre": "Arte",
-            "imagen": "../img/bannerv6.png"
         }
     ],
     "imagenesCartasIndex": [

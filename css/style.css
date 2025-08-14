@@ -169,7 +169,7 @@
 
 
 
-/*Contenedor informacion relevante*/
+/*Contenedor informacion relevante extra*/
 /* --- Estilos para la sección principal (el contenedor) --- */
 .sectionExtra {
     padding: 30px 5px;
@@ -179,54 +179,37 @@
 
 .main-container {
     display: flex;
-    /* Habilita Flexbox para organizar las columnas */
     justify-content: center;
-    /* Centra el contenido horizontalmente */
     align-items: center;
-    /* Alinea los elementos verticalmente */
     max-width: 1200px;
-    /* Limita el ancho del contenedor */
     margin: 50px auto;
-    /* Centra el contenedor en la página y da espacio vertical */
     background-color: #2D402B;
-    /* Color de fondo del contenedor */
     padding: 40px;
-    /* Espaciado interno */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Sombra sutil */
     border-radius: 10px;
-    /* Bordes redondeados */
 }
+
 
 /* --- Estilos para la columna de texto de la izquierda --- */
 .text-column {
     flex: 1;
-    /* Permite que la columna ocupe el espacio disponible */
     padding-right: 40px;
-    /* Espacio entre el texto y la imagen */
 }
 
 .main-title {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* Fuente similar a la imagen */
     font-size: 3em;
-    /* Tamaño del título */
     font-weight: 300;
-    /* Peso de la fuente más ligero */
     color: white;
-    /* Color de texto oscuro */
     margin-bottom: 20px;
 }
 
 .logo-container {
     border-top: 1px solid white;
-    /* Línea superior */
     border-bottom: 1px solid white;
-    /* Línea inferior */
     padding: 10px 0;
     margin: 20px 0;
     width: 200px;
-    /* Ancho fijo para el logo */
 }
 
 .logo-line {
@@ -234,7 +217,6 @@
     font-size: 1.2em;
     line-height: 1.2;
     margin: 0;
-    /* Elimina márgenes predeterminados para que se vean juntos */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -247,11 +229,9 @@
 
 .cta-button {
     background-color: rgb(233, 159, 2);
-    /* Color azul del botón */
     color: white;
     padding: 12px 25px;
     text-decoration: none;
-    /* Quita el subrayado del enlace */
     border-radius: 5px;
     font-weight: bold;
     display: inline-block;
@@ -268,7 +248,6 @@
 /* --- Estilos para la columna de imagen de la derecha --- */
 .image-column {
     flex: 1;
-    /* Permite que la columna ocupe el espacio disponible */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -276,13 +255,9 @@
 
 .circular-image {
     width: 400px;
-    /* Ancho de la imagen */
     height: 400px;
-    /* La misma altura para que sea un círculo perfecto */
     border-radius: 50%;
-    /* La propiedad clave para el círculo */
     object-fit: cover;
-    /* Asegura que la imagen cubra el área sin distorsionarse */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -290,7 +265,6 @@
 @media (max-width: 768px) {
     .main-container {
         flex-direction: column;
-        /* Apila las columnas verticalmente */
         padding: 20px;
         margin: 20px auto;
     }
@@ -299,12 +273,10 @@
         padding-right: 0;
         padding-bottom: 20px;
         text-align: center;
-        /* Centra el texto */
     }
 
     .logo-container {
         margin: 20px auto;
-        /* Centra el logo */
     }
 
     .circular-image {
@@ -323,7 +295,6 @@
 /* --- Estilos de la sección principal --- */
 .art-grid-section {
     background-color: #ffffff;
-    /* Fondo oscuro como en la imagen */
     color: #000000;
     font-family: Arial, sans-serif;
     padding: 50px 20px;
@@ -342,7 +313,6 @@
     display: inline-block;
     padding-bottom: 5px;
     border-bottom: 3px solid #cebdbd;
-    /* Subrayado con el color terracota */
 
     font-family: var(--fontTitle);
 }
@@ -555,13 +525,16 @@
     background-color: var(--color-4);
     border: 4px solid var(--color-secundario);
     border-radius: 15px;
-    padding: 0; /* Quitamos padding para que se vea completo desde arriba */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 0;
+    /* Quitamos padding para que se vea completo desde arriba */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     width: 100%;
     max-width: 400px;
-    height: 670px; /* 🔹 altura fija visible */
-    overflow: hidden; /* Corta la parte sobrante de abajo */
+    height: 670px;
+    /* 🔹 altura fija visible */
+    overflow: hidden;
+    /* Corta la parte sobrante de abajo */
 }
 
 
@@ -571,9 +544,11 @@
 }
 
 .video-card blockquote {
-    border-radius: 0; /* No redondear dentro para que llene */
+    border-radius: 0;
+    /* No redondear dentro para que llene */
     width: 100%;
-    height: auto; /* Mantiene proporción original */
+    height: auto;
+    /* Mantiene proporción original */
     display: block;
 }
 
@@ -587,7 +562,9 @@
     color: white;
     padding: 60px 20px 30px;
     font-family: var(--fontText);
-    border-top: black 2px solid;
+    border-top: black 1px solid;
+
+    overflow: hidden;
 }
 
 .footer-curve .footer-wave {
@@ -598,6 +575,31 @@
     height: 80px;
     background-size: cover;
 }
+
+
+.footer-curve>* {
+    position: relative;
+    z-index: 1;
+}
+
+/* Capa de color transparente encima de la imagen */
+.footer-curve::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* top/right/bottom/left: 0 */
+    background-image: url('../img/imagenFooter.png'); /* Ajusta la ruta si es necesario */
+    background-size: cover; /* <--- Menor a 100% para alejar */
+    background-position: center;
+
+    /* Filtro oscuro encima de la imagen */
+    background-color: rgba(0, 0, 0, 0.1); /* Negro con 50% transparencia */
+    background-blend-mode: darken; /* Mezcla la imagen con el color oscuro */
+
+    transform: scale(1.05); /* Evita bordes duros */
+    z-index: 0;
+    pointer-events: none; /* No bloquea clics */
+}
+
 
 .footer-logo {
     font-weight: bold;
@@ -642,7 +644,39 @@ hr {
 
 
 
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* espacio entre las dos secciones */
+    flex-wrap: wrap;
+    margin-top: 20px;
+    font-weight: bold;
+    color: white;
+}
 
+.footer-socials .social-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-socials .social-section a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #3d3636; /* azul de ejemplo, cambia por cada red si quieres */
+    color: white;
+    font-size: 1.2rem;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.footer-socials .social-section a:hover {
+    transform: scale(1.2);
+    background-color: #567541; /* color al pasar el mouse */
+}
 
 /*Fin footer*/
 
@@ -651,9 +685,9 @@ hr {
 
 /*Esto es utilizado para la seleccion de pagina*/
 .navbar-nav .nav-link.active {
-    background-color: rgb(153, 177, 123) !important; 
-    color: rgb(110, 73, 58) !important; 
+    background-color: rgb(153, 177, 123) !important;
+    color: rgb(110, 73, 58) !important;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    border-radius: 6px; 
+    border-radius: 6px;
     transition: all 0.3s ease;
 }

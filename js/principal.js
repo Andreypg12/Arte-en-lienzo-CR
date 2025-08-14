@@ -1,7 +1,6 @@
 $(document).ready(
     // ================= generador del Nav Bar =================
     function () {
-
         document.querySelectorAll('[name="navbar"]').forEach((element) => {
             element.innerHTML = `
             <div class="container-fluid">
@@ -124,23 +123,58 @@ $(document).ready(
         // ================= generador del Nav Bar =================
 
 
+
+
+
+
+        // ================= Cambio y marcado de pagina =================
+        // 1. Detectar URL actual y marcar el enlace activo individual
+        $(".navbar-nav .nav-link").each(function () {
+            if (this.href === window.location.href) {
+                $(this).addClass("active");
+            }
+        });
+
+        // 2. Al hacer clic, cambiar clase active
+        $(".navbar-nav .nav-link").on("click", function () {
+            $(".navbar-nav .nav-link").removeClass("active");
+            $(this).addClass("active");
+        });
+
+        // 3. Marcar dropdown activo si estamos en galeriaImagenes.html o autores.html
+        const currentPage = window.location.pathname.split("/").pop();
+
+        if (
+            currentPage === "galeriaImagenes.html" ||
+            currentPage === "autores.html"
+        ) {
+            $(".navbar-nav .nav-link").removeClass("active");
+            $(".nav-item.dropdown > .nav-link.dropdown-toggle").addClass("active");
+        }
+        // ================= Cambio y marcado de pagina =================
+
+
+
+
+
+        
         // ================= Llamado al api =================
 
         // fetch("https://andreypg12.github.io/Api_imagenes_arte_en_lienzo/json/apiImagenes.json")
         fetch("../json/apiImagenes.json")
             .then((response) => response.json())
             .then((data) => {
-
                 ponerImagenesIndividuales(data.imagenes);
 
                 ponerImagenesCarouselPrincipal(data.imagenesCarouselPrincipal);
 
-                ponerImagenesGaleriaPrincipal(data.galeriaImagenes)
+                ponerImagenesGaleriaPrincipal(data.galeriaImagenes);
 
-                ponerImagenesCarouselGaleriaImagenes(data.imagenesCarouselGaleriaImagenes)
+                ponerImagenesCarouselGaleriaImagenes(
+                    data.imagenesCarouselGaleriaImagenes
+                );
 
-                ponerImagenesCartasIndex(data.imagenesCartasIndex)
-
+                ponerImagenesCartasIndex(data.imagenesCartasIndex);
 
                 // ================= Galeria de imagenes de los productos =================
 
@@ -165,18 +199,14 @@ $(document).ready(
                 });
 
                 // ================= Galeria de imagenes de los productos =================
-
-
-            }).catch(error => {
+            })
+            .catch((error) => {
                 console.error("Error al cargar JSON:", error);
             });
 
         // ================= Llamado al api =================
 
-
-
         function ponerImagenesIndividuales(data) {
-
             // ================= Imagen del banner =================
 
             const banner = data.find((item) => item.nombre === "Banner");
@@ -185,11 +215,9 @@ $(document).ready(
                 document.querySelectorAll('[name="banner"]').forEach((element) => {
                     element.innerHTML = `<img src="${banner.imagen}" alt="${banner.descripcion}" />`;
                 });
-
             }
 
             // ================= Imagen del banner =================
-
 
             // ================= Seccion de los tamaños de los cuadros en la galeria de imagenes =================
 
@@ -203,10 +231,11 @@ $(document).ready(
 
             // ================= Seccion de los tamaños de los cuadros en la galeria de imagenes =================
 
-
             // ================= Cuadro de mascota en index =================
 
-            const cuandroMascota = data.find((item) => item.nombre === "CuadroMascotaindex");
+            const cuandroMascota = data.find(
+                (item) => item.nombre === "CuadroMascotaindex"
+            );
 
             if (cuandroMascota) {
                 let html = `<img src="${cuandroMascota.imagen}" alt="${cuandroMascota.descripcion}" class="circular-image"/>`;
@@ -215,7 +244,6 @@ $(document).ready(
             }
 
             // ================= Cuadro de mascota en index =================
-
 
             // ================= Parte de imagenes de las dueñas de Arte y lienzo =================
 
@@ -227,7 +255,9 @@ $(document).ready(
                 $("#Yoen").html(html);
             }
 
-            const Yoen_Yoman = data.find((item) => item.nombre === "ImagenYoen_Yoman");
+            const Yoen_Yoman = data.find(
+                (item) => item.nombre === "ImagenYoen_Yoman"
+            );
 
             if (Yoen_Yoman) {
                 let html = `<img src="${Yoen_Yoman.imagen}" alt="${Yoen_Yoman.descripcion}" class="imagen-somos"/>`;
@@ -244,7 +274,6 @@ $(document).ready(
             }
 
             // ================= Parte de imagenes de las dueñas de Arte y lienzo =================
-
 
             // ================= Parte de autores =================
 
@@ -267,11 +296,9 @@ $(document).ready(
             // ================= Parte de autores =================
         }
 
-
         // ================= Carousel de la página principal =================
 
         function ponerImagenesCarouselPrincipal(data) {
-
             let html = "";
 
             data.forEach((item, index) => {
@@ -289,7 +316,6 @@ $(document).ready(
         }
 
         // ================= Carousel de la página principal =================
-
 
         // ================= Galeria principal =================
 
@@ -309,7 +335,6 @@ $(document).ready(
         }
 
         // ================= Galeria principal =================
-
 
         //================= Seccion del carrusel de la galeria de imagenes =================
 
@@ -332,13 +357,10 @@ $(document).ready(
 
         //================= Seccion del carrusel de la galeria de imagenes =================
 
-
         //================= Seccion de las cartas en el index =================
 
         function ponerImagenesCartasIndex(data) {
-
             data.forEach((item) => {
-
                 let html = `
                     <figure class="art-item ${item.clase}">
                         <img src="${item.imagen}" alt="${item.alt}">
@@ -367,7 +389,6 @@ $(document).ready(
 
         //================= Seccion de las cartas en el index =================
 
-
         // ================= Parte de los botones de la galeria de imagenes =================
 
         $("#btn-imagen").click(function () {
@@ -379,7 +400,6 @@ $(document).ready(
         });
 
         // ================= Parte de los botones de la galeria de imagenes =================
-
 
         // ================= Calculo de edad en formulario =================
 
@@ -402,34 +422,5 @@ $(document).ready(
 
         // ================= Calculo de edad en formulario =================
 
-
-
-        // ================= Navegacion interactiva =================
-
-        $(document).ready(function () {
-
-            // 1. Detectar URL actual y marcar el enlace activo individual
-            $(".navbar-nav .nav-link").each(function () {
-                if (this.href === window.location.href) {
-                    $(this).addClass("active");
-                }
-            });
-
-            // 2. Al hacer clic, cambiar clase active
-            $(".navbar-nav .nav-link").on("click", function () {
-                $(".navbar-nav .nav-link").removeClass("active");
-                $(this).addClass("active");
-            });
-
-            // 3. Marcar dropdown activo si estamos en galeriaImagenes.html o autores.html
-            const currentPage = window.location.pathname.split("/").pop();
-
-            if (currentPage === "galeriaImagenes.html" || currentPage === "autores.html") {
-                $(".navbar-nav .nav-link").removeClass("active");
-                $(".nav-item.dropdown > .nav-link.dropdown-toggle").addClass("active");
-            }
-        });
-
-        // ================= Navegacion interactiva =================
     }
 );
