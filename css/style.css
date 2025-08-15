@@ -695,7 +695,7 @@ hr {
 /*Esto es utilizado para la seleccion de pagina*/
 .navbar-nav .nav-link.active {
     background-color: rgb(153, 177, 123) !important;
-    color: rgb(110, 73, 58) !important;
+    color: rgb(66, 54, 42) !important;
     font-family: Georgia, 'Times New Roman', Times, serif;
     border-radius: 6px;
     transition: all 0.3s ease;
