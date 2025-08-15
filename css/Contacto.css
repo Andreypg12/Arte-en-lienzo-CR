@@ -152,7 +152,6 @@ main {
 /* Sección de contacto */
 #contacto {
     padding: 40px;
-    background-color: var(--color-4);
 }
 
 
@@ -170,7 +169,22 @@ main {
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
+    width: 75%;
 }
+
+@media (max-width: 768px) {
+    .contact-container {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+    }
+
+    #contacto {
+        padding: 5px;
+
+    }
+}
+
 
 #form {
     padding: 30px;
