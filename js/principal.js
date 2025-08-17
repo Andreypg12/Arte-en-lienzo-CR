@@ -122,11 +122,6 @@ $(document).ready(
 
         // ================= generador del Nav Bar =================
 
-
-
-
-
-
         // ================= Cambio y marcado de pagina =================
         // 1. Detectar URL actual y marcar el enlace activo individual
         $(".navbar-nav .nav-link").each(function () {
@@ -153,11 +148,6 @@ $(document).ready(
         }
         // ================= Cambio y marcado de pagina =================
 
-
-
-
-
-        
         // ================= Llamado al api =================
 
         // fetch("https://andreypg12.github.io/Api_imagenes_arte_en_lienzo/json/apiImagenes.json")
@@ -195,7 +185,18 @@ $(document).ready(
                         `;
                     });
 
-                    $("#containerProductosGaleriaImagenes").html(htmlProductos);
+                    $("#containerProductosGaleriaImagenes").html(htmlProductos).show();
+
+                    // Desplaza la pantalla suavemente hacia el contenedor
+                    const containerOffset = $("#containerProductosGaleriaImagenes").offset().top;
+                    $("html, body").animate({scrollTop: containerOffset, },800); // 800 milisegundos para una transición suave
+
+
+                });
+
+
+                $(document).on("dblclick", ".categoria", function () {
+                    location.reload();
                 });
 
                 // ================= Galeria de imagenes de los productos =================
@@ -223,7 +224,7 @@ $(document).ready(
 
             const medidas = data.find((item) => item.nombre === "Medidas");
 
-            ponerImagenSola(medidas, "#seccion-imagen", "")
+            ponerImagenSola(medidas, "#seccion-imagen", "");
 
             // ================= Seccion de los tamaños de los cuadros en la galeria de imagenes =================
 
@@ -233,7 +234,7 @@ $(document).ready(
                 (item) => item.nombre === "CuadroMascotaindex"
             );
 
-            ponerImagenSola(cuandroMascota, "#cuadroMascotaIndex", "circular-image")
+            ponerImagenSola(cuandroMascota, "#cuadroMascotaIndex", "circular-image");
 
             // ================= Cuadro de mascota en index =================
 
@@ -241,19 +242,17 @@ $(document).ready(
 
             const Yoen = data.find((item) => item.nombre === "ImagenYoen");
 
-            ponerImagenSola(Yoen, "#Yoen", "imagen-somos")
-
+            ponerImagenSola(Yoen, "#Yoen", "imagen-somos");
 
             const Yoen_Yoman = data.find(
                 (item) => item.nombre === "ImagenYoen_Yoman"
             );
 
-            ponerImagenSola(Yoen_Yoman, "#Yoen_Yoman", "imagen-somos")
-
+            ponerImagenSola(Yoen_Yoman, "#Yoen_Yoman", "imagen-somos");
 
             const Yoman = data.find((item) => item.nombre === "ImagenYoman");
 
-            ponerImagenSola(Yoman, "#Yoman", "imagen-somos")
+            ponerImagenSola(Yoman, "#Yoman", "imagen-somos");
 
             // ================= Parte de imagenes de las dueñas de Arte y lienzo =================
 
@@ -261,23 +260,21 @@ $(document).ready(
 
             const Alejandro = data.find((item) => item.nombre === "ImagenAlejandro");
 
-            ponerImagenSola(Alejandro, "#Alejandro", "")
-
+            ponerImagenSola(Alejandro, "#Alejandro", "");
 
             const Andrey = data.find((item) => item.nombre === "ImagenAndrey");
 
-            ponerImagenSola(Andrey, "#Andrey", "")
-
+            ponerImagenSola(Andrey, "#Andrey", "");
 
             const Nana = data.find((item) => item.nombre === "ImagenNanaAcercaDe");
 
-            ponerImagenSola(Nana, "#imagenNanaAcercaDe", "")
+            ponerImagenSola(Nana, "#imagenNanaAcercaDe", "");
 
             // ================= Parte de autores =================
         }
 
-        function ponerImagenSola(item, contenedor, clases){
-            if(item){
+        function ponerImagenSola(item, contenedor, clases) {
+            if (item) {
                 let html = `<img src="${item.imagen}" alt="${item.descripcion}" class="${clases}">`;
 
                 $(contenedor).html(html);
@@ -409,6 +406,5 @@ $(document).ready(
         });
 
         // ================= Calculo de edad en formulario =================
-
     }
 );
