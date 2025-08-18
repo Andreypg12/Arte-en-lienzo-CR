@@ -154,8 +154,7 @@ $(document).ready(
 
 
 
-        // fetch("https://andreypg12.github.io/Api_imagenes_arte_en_lienzo/json/apiImagenes.json")
-        fetch("../json/apiImagenes.json")
+        fetch("https://andreypg12.github.io/Api_imagenes_arte_en_lienzo/json/apiImagenes.json")
             .then((response) => response.json())
             .then((data) => {
                 ponerImagenesIndividuales(data.imagenes);
