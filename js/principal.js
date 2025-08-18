@@ -1,6 +1,8 @@
 $(document).ready(
     // ================= generador del Nav Bar =================
     function () {
+
+
         document.querySelectorAll('[name="navbar"]').forEach((element) => {
             element.innerHTML = `
             <div class="container-fluid">
@@ -150,6 +152,8 @@ $(document).ready(
 
         // ================= Llamado al api =================
 
+
+
         // fetch("https://andreypg12.github.io/Api_imagenes_arte_en_lienzo/json/apiImagenes.json")
         fetch("../json/apiImagenes.json")
             .then((response) => response.json())
@@ -175,6 +179,8 @@ $(document).ready(
                         (item) => item.categoria === categoriaSeleccionada
                     );
 
+                    $("#titulo-relacionados").fadeIn();
+
                     let htmlProductos = "";
                     imagenesFiltradas.forEach((item) => {
                         htmlProductos += `
@@ -188,8 +194,8 @@ $(document).ready(
                     $("#containerProductosGaleriaImagenes").html(htmlProductos).show();
 
                     // Desplaza la pantalla suavemente hacia el contenedor
-                    const containerOffset = $("#containerProductosGaleriaImagenes").offset().top;
-                    $("html, body").animate({scrollTop: containerOffset, },800); // 800 milisegundos para una transición suave
+                    const containerOffset = $("#titulo-relacionados").offset().top;
+                    $("html, body").animate({ scrollTop: containerOffset, }, 500); // 500 milisegundos para una transición suave
 
 
                 });
@@ -269,6 +275,10 @@ $(document).ready(
             const Nana = data.find((item) => item.nombre === "ImagenNanaAcercaDe");
 
             ponerImagenSola(Nana, "#imagenNanaAcercaDe", "");
+
+
+            const imagenFooter = data.find((item) => item.nombre === "ImagenFooter");
+            $(".footer-curve").css("--footer-img", `url('${imagenFooter.imagen}')`);
 
             // ================= Parte de autores =================
         }
@@ -406,5 +416,27 @@ $(document).ready(
         });
 
         // ================= Calculo de edad en formulario =================
+
+        const path = window.location.pathname.split("/").pop();
+
+        const pages = {
+            "acercaDe.html": "Acerca de...",
+            "Contacto.html": "Contacto",
+            "autores.html": "Autores",
+            "galeriaImagenes.html": "Galería de imagenes"
+        };
+
+        let breadcrumb = `
+            <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item active" style="font-weight: bolder" aria-current="page">
+                ${pages[path] || "Página"}
+            </li>
+            </ol>
+        `;
+
+        $("#breadcrumb-container").html(breadcrumb);
     }
 );

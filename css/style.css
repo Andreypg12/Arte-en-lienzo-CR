@@ -23,7 +23,6 @@
 
     --fontTitle: 'Playfair Display', serif;
     --fontText: 'Cormorant Garamond', serif;
-
 }
 
 
@@ -185,11 +184,23 @@
     border-radius: 10px;
 }
 
+.titulo-galeria {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.subtitulo-galeria {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+    color: #444;
+    font-family: "Arial", sans-serif;
+}
 
 /* --- Estilos para la columna de texto de la izquierda --- */
 .text-column {
     flex: 1;
-    padding-right: 40px;
 }
 
 .main-title {
@@ -262,26 +273,11 @@
 
 /* --- Media query para dispositivos pequeños --- */
 @media (max-width: 768px) {
-    /* .main-container {
-        flex-direction: column;
-        padding: 20px;
-        margin: 20px auto;
-    } */
-/* 
-    .text-column {
-        padding-right: 0;
-        padding-bottom: 20px;
-        text-align: center;
-    } */
-
-    /* .logo-container {
-        margin: 20px auto;
-    }
 
     .circular-image {
         width: 300px;
         height: 300px;
-    } */
+    }
 }
 
 /*Fin contenedor informacion relevante*/
@@ -587,7 +583,7 @@
     position: absolute;
     inset: 0;
     /* top/right/bottom/left: 0 */
-    background-image: url('../img/imagenFooter.png');
+    background-image: var(--footer-img);
     /* Ajusta la ruta si es necesario */
     background-size: cover;
     /* <--- Menor a 100% para alejar */

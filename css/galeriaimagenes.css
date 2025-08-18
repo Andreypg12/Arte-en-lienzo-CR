@@ -261,13 +261,7 @@ body {
 /*Sección mas informacion de cuadros*/
 
 .ContBotones {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    gap: 10px;
-
-    padding: 4rem;
+    gap: 15px;
 }
 
 

@@ -35,17 +35,8 @@
     <section class="intro-single">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <nav aria-label="breadcrumb" class="breadcrumb-box d-flex">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item">
-                                <a class="nav-link" href="index.html">Home</a>
-                            </li>
-                            <li class="breadcrumb-item active" style="font-weight: bolder" aria-current="page">
-                                Galería de Arte
-                            </li>
-                        </ol>
-                    </nav>
+                <div class="col-md-12 m-2">
+                    <nav id="breadcrumb-container"></nav>
                 </div>
             </div>
         </div>
@@ -54,9 +45,16 @@
     <!-- Header fin -->
 
     <!-- Sección Galería -->
+    <h1 class="titulo-galeria">Galería de Imágenes</h1>
+    <h2 class="subtitulo-galeria">
+        Presiona una obra que te interese para ver más relacionadas y sus precios
+    </h2>
+
     <div id="containerPrincipalGaleriaImagenes" class="container-cards d-flex flex-wrap justify-content-center">
     </div>
 
+
+    <h1 id="titulo-relacionados" class="titulo-galeria" style="display: none;">Arte relacionado</h1>
 
     <div id="containerProductosGaleriaImagenes" class="container-cards d-flex flex-wrap justify-content-center">
     </div>
@@ -74,7 +72,7 @@
 
 
     <!-- Botones -->
-    <div class="ContBotones">
+    <div class="ContBotones d-flex justify-content-center align-items-center flex-column flex-lg-row mt-3 p-1">
         <button id="btn-imagen" class="btn mb-3 btn-gradient">Medidas de Cuadros</button>
         <button id="btn-carrusel" class="btn mb-3 btn-border">Información adicional </button>
     </div>

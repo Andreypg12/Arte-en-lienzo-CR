@@ -92,6 +92,9 @@ function calcularDistancia(origen) {
                 const distancia = response.rows[0].elements[0].distance.text;
                 const duracion = response.rows[0].elements[0].duration.text;
 
+                document.getElementById("infoRuta").innerText =
+                    `Información sobre la ruta en carro`;
+
                 // Mostrar los datos en el elemento HTML con id="distancia"
                 document.getElementById("distancia").innerText =
                     `Distancia: ${distancia}, Duración: ${duracion}`;
