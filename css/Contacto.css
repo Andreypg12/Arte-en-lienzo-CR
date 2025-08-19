@@ -28,8 +28,6 @@
 
 
 
-
-
 body {
     display: flex;
     flex-direction: column;
@@ -221,6 +219,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /*Grow, shrink, basis*/
     flex: 1 1 350px;
     background: var(--color-3);
     padding: 25px;
@@ -240,10 +239,12 @@ main {
 }
 
 
-.mapa iframe {
+/* .mapa iframe {
     margin-top: 20px;
     border-radius: 8px;
 }
+ */
+
 
 /*Final Información de contacto*/
 
@@ -251,12 +252,11 @@ main {
 
 
 /*Footer */
-/* Footer */
+
 footer {
     text-align: center;
     padding: 2rem;
     background: #222;
     color: #fff;
 }
-
 /*Final Footer*/

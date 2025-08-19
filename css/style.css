@@ -169,7 +169,7 @@
 
 
 /*Contenedor informacion relevante extra*/
-/* --- Estilos para la sección principal (el contenedor) --- */
+
 .sectionExtra {
     padding: 30px 5px;
     background-color: #c4c3ac;
@@ -198,7 +198,7 @@
     font-family: "Arial", sans-serif;
 }
 
-/* --- Estilos para la columna de texto de la izquierda --- */
+
 .text-column {
     flex: 1;
 }
@@ -319,17 +319,14 @@
     font-family: var(--fontText);
 }
 
-/* --- Estilos del contenedor de la cuadrícula --- */
+
 .art-grid-container {
     display: flex;
     gap: 15px;
-    /* Espacio entre las columnas */
     max-width: 1200px;
     margin: 0 auto;
-    /* Centra el contenedor */
 }
 
-/* --- Estilos de las columnas --- */
 .column-left,
 .column-center {
     display: flex;
@@ -347,18 +344,15 @@
 
 .column-right {
     flex: 1.5;
-    /* Esta columna es un poco más ancha que las otras */
 }
 
-/* --- Estilos generales de los items de arte (imágenes) --- */
+
 .art-item {
     position: relative;
-    /* Clave para posicionar el texto superpuesto */
     margin: 0;
     padding: 0;
     cursor: pointer;
     overflow: hidden;
-    /* Asegura que la imagen no se desborde al hacer zoom */
 }
 
 .art-item img {
@@ -367,12 +361,10 @@
     object-fit: cover;
     display: block;
     transition: transform 0.3s ease;
-    /* Transición para el efecto de zoom */
 }
 
 .art-item:hover img {
     transform: scale(1.05);
-    /* Efecto de zoom sutil al pasar el mouse */
 }
 
 /* --- Estilos de las imágenes específicas para el tamaño --- */
@@ -398,7 +390,6 @@
 
 .full-height {
     height: 565px;
-    /* La suma de las alturas y el gap de las otras columnas */
     border-radius: 10px;
 }
 
@@ -411,7 +402,6 @@
     width: 100%;
     padding: 15px;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-    /* Gradiente para que se vea el texto */
     color: #fff;
     box-sizing: border-box;
     text-align: left;
@@ -435,60 +425,44 @@
 
 
 .explore-link {
-    /* Estilos base del botón */
     display: inline-block;
     padding: 15px 35px;
-    /* Aumentado para un botón más grande */
     color: #000000;
     text-decoration: none;
     font-size: 1.1em;
     font-weight: bold;
-    /* Le da más peso al texto */
     margin-top: 40px;
 
-    /* Nueva propiedad para el estilo */
     background-color: #e0e0e0;
-    /* Un gris claro como color de fondo inicial */
     border: 2px solid #e0e0e0;
-    /* Un borde sutil que coincide con el fondo */
     border-radius: 30px;
-    /* Esquinas redondeadas */
 
-    /* La transición ahora es más lenta y afecta a todas las propiedades */
     transition: all 0.4s ease-in-out;
 }
 
 .explore-link:hover {
-    /* Estilos al pasar el mouse */
     background-color: #4b664c;
     color: #fff;
     border-color: #4b664c;
-    /* Cambia el color del borde para que coincida */
     transform: translateY(-2px);
-    /* Un sutil efecto de elevación */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* Una sombra para darle profundidad */
 }
 
 /* --- Media Queries para pantallas pequeñas --- */
 @media (max-width: 768px) {
     .art-grid-container {
         flex-direction: column;
-        /* Apila las columnas verticalmente */
     }
 
     .column-left,
     .column-center,
     .column-right {
         flex: 1;
-        /* Todas las columnas tienen el mismo ancho */
     }
 
     .art-item {
         margin-bottom: 15px;
-        /* Agrega espacio entre los items en móvil */
         height: 250px !important;
-        /* Altura uniforme para todos los items en móvil */
     }
 }
 
@@ -582,24 +556,18 @@
     content: "";
     position: absolute;
     inset: 0;
-    /* top/right/bottom/left: 0 */
     background-image: var(--footer-img);
-    /* Ajusta la ruta si es necesario */
     background-size: cover;
-    /* <--- Menor a 100% para alejar */
     background-position: center;
 
-    /* Filtro oscuro encima de la imagen */
     background-color: rgba(0, 0, 0, 0.1);
     /* Negro con 50% transparencia */
     background-blend-mode: darken;
     /* Mezcla la imagen con el color oscuro */
 
     transform: scale(1.05);
-    /* Evita bordes duros */
     z-index: 0;
     pointer-events: none;
-    /* No bloquea clics */
 }
 
 

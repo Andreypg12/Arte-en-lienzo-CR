@@ -167,9 +167,9 @@ header h1 {
 }
 
 .perfil:hover {
-    background-color: rgba(201, 199, 195,0.7); /* fondo clarito */
-    transform: translateY(-8px) scale(1.02); /* movimiento suave */
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2); /* sombra más profunda */
+    background-color: rgba(201, 199, 195,0.7); 
+    transform: translateY(-8px) scale(1.02); 
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2); 
 }
 
 .info h2,

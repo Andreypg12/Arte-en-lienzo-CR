@@ -1,29 +1,18 @@
 :root {
     --color-primario: rgb(154, 158, 141);
-    /* Tono neutro suave */
     --color-secundario: rgb(196, 138, 98);
-    /* Terracota cálido */
     --color-1: rgb(117, 76, 52);
-    /* Marrón artístico */
     --color-2: rgb(130, 146, 146);
-    /* Verde grisáceo */
     --color-3: rgb(212, 186, 161);
-    /* Beige elegante */
     --color-4: rgb(239, 226, 220);
-    /* Rosa pálido */
     --color-5: rgb(229, 191, 155);
-    /* Melocotón suave */
     --color-6: rgb(113, 126, 98);
-    /* Verde oliva oscuro */
     --color-7: rgb(184, 191, 175);
-    /* Gris cálido */
 
     --colorFondos: rgb(196, 195, 172);
 
-
     --fontTitle: 'Playfair Display', serif;
     --fontText: 'Cormorant Garamond', serif;
-
 }
 
 
@@ -160,7 +149,7 @@ body {
 .container-cards .card {
     background: white;
     border: 8px solid #a57c55;
-    /* Borde principal (madera o dorado) */
+    /* Borde principal (madera) */
     outline: 4px solid #e4d4b5;
     /* Marco secundario (más claro) */
     outline-offset: -12px;
@@ -193,13 +182,11 @@ body {
 /* Efecto cuando el mouse entra al contenedor */
 .container-cards:hover .card {
     transform: scale(0.9);
-    /*  opacity: 0.6; */
 }
 
 /* Efecto cuando el mouse está sobre la carta */
 .container-cards .card:hover {
     transform: scale(1.2) translateY(-10px);
-    /*  opacity: 1; */
     z-index: 10;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
 }
@@ -210,14 +197,13 @@ body {
 
 
 
+
 /*Seccion moneda*/
 
 .contenedorMoneda {
     position: fixed;
     left: 20px;
-    /* Fijo al lado izquierdo */
     bottom: 20px;
-    /* Puedes ajustar la altura */
     z-index: 1000;
 }
 
@@ -236,12 +222,11 @@ body {
     box-shadow: 0 4px 12px rgba(255, 255, 255, 0.4);
     transition: all 0.3s ease;
     min-width: 130px;
-    /* Para que no se vea muy pequeño */
 }
 
-/* Hover */
+
 .select-elegante:hover {
-    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.6);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.6);
     transform: scale(1.05);
 }
 
@@ -258,39 +243,14 @@ body {
 
 
 
+
 /*Sección mas informacion de cuadros*/
 
 .ContBotones {
     gap: 15px;
 }
 
-
-/*Boton 1*/
-.btn-gradient {
-    background: linear-gradient(45deg, #70976c, #22522a);
-    color: #fff;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 50px;
-    font-size: 16px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(53, 122, 68, 0.4);
-}
-
-.btn-gradient:hover {
-    background: linear-gradient(45deg, #92ff76, #92ff76);
-    /* nuevo degradado */
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(25, 56, 30, 0.4);
-    color: #fff;
-}
-
-
-
-/*Boton 2*/
+/*Botones*/
 .btn-border {
     background: linear-gradient(45deg, #70976c, #22522a);
     color: #fff;
@@ -311,7 +271,7 @@ body {
     /* nuevo degradado */
     transform: scale(1.05);
     box-shadow: 0 6px 15px rgba(25, 56, 30, 0.4);
-    color: #fff;
+    color: #4b4747;
 }
 
 
@@ -341,11 +301,8 @@ body {
 
 #carousel-section img {
     width: 100%;
-    /* Ocupa todo el ancho del carrusel */
     max-height: 800px;
-    /* Máxima altura permitida */
     object-fit: contain;
-    /* Ajusta sin deformar */
     border-radius: 8px;
 }
 
@@ -354,11 +311,8 @@ body {
     background-color: rgba(83, 58, 58, 0.85);
     border-radius: 50%;
     width: 40px;
-    /* Ancho del círculo */
     height: 40px;
-    /* Alto del círculo */
     background-size: 70% 70%;
-    /* Tamaño de la flecha dentro */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
 }
@@ -367,11 +321,8 @@ body {
 .carousel-control-next-icon:hover,
 .carousel-control-prev-icon:hover {
     background-color: #70976c;
-    /* Cambia el color de fondo */
     transform: scale(1.1);
-    /* Efecto de aumento */
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-    /* Sombra más intensa */
 }
 
 /*Final mas Informacion de cuadros*/
