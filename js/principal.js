@@ -277,7 +277,12 @@ $(document).ready(
 
 
             const imagenFooter = data.find((item) => item.nombre === "ImagenFooter");
+
             $(".footer-curve").css("--footer-img", `url('${imagenFooter.imagen}')`);
+
+            const imagenFondoAutores = data.find((item) => item.nombre === "FondoAutores");
+
+            $(".autores-stack").css("--ImagenFondoAutores", `url('${imagenFondoAutores.imagen}')`);
 
             // ================= Parte de autores =================
         }

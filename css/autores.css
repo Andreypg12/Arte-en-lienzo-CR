@@ -133,7 +133,7 @@ header h1 {
     background-color: var(--colorFondos);
     font-family: var(--fontText);
     position: relative;
-    background: url("../img/imagenAutores2.jpg") center/cover no-repeat;
+    background: var(--ImagenFondoAutores) center/cover no-repeat;
     z-index: 1;
 }
 
