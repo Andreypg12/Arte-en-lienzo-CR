@@ -2,10 +2,10 @@ let map;                     // Mapa de Google Maps
 let directionsService;       // Servicio de direcciones para calcular rutas
 let directionsRenderer;      // Objeto que dibuja la ruta en el mapa
 
-// Coordenadas del restaurante (ubicación fija)
-const restauranteCoords = {
-    lat: 10.01685,             // Latitud del restaurante (San Rafael de Alajuela)
-    lng: -84.208939            // Longitud del restaurante
+// Coordenadas del ArteEnLienzo (ubicación fija)
+const ArteEnLienzoCoords = {
+    lat: 9.974991615784106,             // Latitud del ArteEnLienzo (San Rafael de Alajuela)
+    lng: -84.21266226459808           // Longitud del ArteEnLienzo
 };
 
 // Función principal que inicializa el mapa
@@ -16,18 +16,18 @@ async function initMap() {
     // Importar el marcador avanzado de la librería Marker
     const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
-    // Crear el mapa centrado en las coordenadas del restaurante
+    // Crear el mapa centrado en las coordenadas del ArteEnLienzo
     map = new Map(document.getElementById("map"), {
-        center: restauranteCoords,     // Centro del mapa
+        center: ArteEnLienzoCoords,     // Centro del mapa
         zoom: 15,                      // Nivel de zoom
         mapId: "DEMO_MAP_ID",          // ID del mapa (puede ser personalizado desde Google Cloud)
     });
 
-    // Colocar marcador en la ubicación del restaurante
+    // Colocar marcador en la ubicación del ArteEnLienzo
     new AdvancedMarkerElement({
         map: map,
-        position: restauranteCoords,
-        title: "Restaurante",          // Texto que aparece al pasar el mouse
+        position: ArteEnLienzoCoords,
+        title: "ArteEnLienzo",          // Texto que aparece al pasar el mouse
     });
 
     // Inicializar los servicios de direcciones
@@ -56,11 +56,11 @@ async function initMap() {
                 // Centra el mapa en la ubicación del usuario
                 map.setCenter(userLocation);
 
-                // Llama función para calcular la distancia entre usuario y restaurante
+                // Llama función para calcular la distancia entre usuario y ArteEnLienzo
                 calcularDistancia(userLocation);
 
-                // Traza la ruta desde el usuario hasta el restaurante
-                trazarRuta(userLocation, restauranteCoords);
+                // Traza la ruta desde el usuario hasta el ArteEnLienzo
+                trazarRuta(userLocation, ArteEnLienzoCoords);
             },
             () => {
                 // Si no se pudo obtener la ubicación del usuario, muestra un mensaje
@@ -73,7 +73,7 @@ async function initMap() {
     }
 }
 
-// Función que calcula la distancia entre el usuario y el restaurante
+// Función que calcula la distancia entre el usuario y el ArteEnLienzo
 function calcularDistancia(origen) {
     // Crear el servicio de matriz de distancia (DistanceMatrixService)
     const servicio = new google.maps.DistanceMatrixService();
@@ -82,7 +82,7 @@ function calcularDistancia(origen) {
     servicio.getDistanceMatrix(
         {
             origins: [origen],                  // Punto de partida (usuario)
-            destinations: [restauranteCoords],  // Punto de llegada (restaurante)
+            destinations: [ArteEnLienzoCoords],  // Punto de llegada (ArteEnLienzo)
             travelMode: google.maps.TravelMode.DRIVING, // Modo de viaje: conducir
         },
         (response, status) => {
@@ -112,7 +112,7 @@ function trazarRuta(origen, destino) {
     // Configuración de la solicitud de ruta
     const request = {
         origin: origen,                     // Punto de partida (usuario)
-        destination: destino,              // Punto de llegada (restaurante)
+        destination: destino,              // Punto de llegada (ArteEnLienzo)
         travelMode: google.maps.TravelMode.DRIVING, // Modo de viaje
     };
 
