@@ -124,6 +124,11 @@ $(document).ready(
 
         // ================= generador del Nav Bar =================
 
+
+
+        
+
+
         // ================= Cambio y marcado de pagina =================
         // 1. Detectar URL actual y marcar el enlace activo individual
         $(".navbar-nav .nav-link").each(function () {
@@ -149,6 +154,11 @@ $(document).ready(
             $(".nav-item.dropdown > .nav-link.dropdown-toggle").addClass("active");
         }
         // ================= Cambio y marcado de pagina =================
+
+
+
+
+
 
         // ================= Llamado al api =================
 
