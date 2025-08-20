@@ -10,10 +10,12 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("FechaNacimiento").value = datosGuardados.fechaNacimiento || "";
     document.getElementById("edad").value = datosGuardados.edad || "";
     document.getElementById("ingreso").value = datosGuardados.ingreso || "";
+
     if (datosGuardados.genero) {
       const generoInput = document.querySelector(`input[name="genero"][value="${datosGuardados.genero}"]`);
       if (generoInput) generoInput.checked = true;
     }
+    
     if (datosGuardados.grado) {
       const gradoSelect = document.getElementById("grado");
       Array.from(gradoSelect.options).forEach(opt => {

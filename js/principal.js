@@ -172,14 +172,14 @@ $(document).ready(
 
                 ponerImagenesCarouselPrincipal(data.imagenesCarouselPrincipal);
 
-                ponerImagenesGaleriaPrincipal(data.galeriaImagenes);
-
                 ponerImagenesCarouselGaleriaImagenes(
                     data.imagenesCarouselGaleriaImagenes
                 );
 
                 ponerImagenesCartasIndex(data.imagenesCartasIndex);
 
+
+                ponerImagenesGaleriaPrincipal(data.galeriaImagenes);
                 // ================= Galeria de imagenes de los productos =================
 
                 $(document).on("click", ".categoria", function () {
@@ -206,7 +206,6 @@ $(document).ready(
                     // Desplaza la pantalla suavemente hacia el contenedor
                     const containerOffset = $("#titulo-relacionados").offset().top;
                     $("html, body").animate({ scrollTop: containerOffset, }, 500); // 500 milisegundos para una transición suave
-
 
                 });
 
