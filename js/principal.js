@@ -167,6 +167,7 @@ $(document).ready(
         fetch("https://andreypg12.github.io/Api_imagenes_arte_en_lienzo/json/apiImagenes.json")
             .then((response) => response.json())
             .then((data) => {
+
                 ponerImagenesIndividuales(data.imagenes);
 
                 ponerImagenesCarouselPrincipal(data.imagenesCarouselPrincipal);
@@ -409,27 +410,6 @@ $(document).ready(
         });
 
         // ================= Parte de los botones de la galeria de imagenes =================
-
-        // ================= Calculo de edad en formulario =================
-
-        $("#FechaNacimiento").on("change", function () {
-            const fechaNacimiento = new Date($(this).val());
-            const fechaActual = new Date();
-
-            let edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
-            const mes = fechaActual.getMonth() - fechaNacimiento.getMonth();
-
-            if (
-                mes < 0 ||
-                (mes === 0 && fechaActual.getDate() < fechaNacimiento.getDate())
-            ) {
-                edad--;
-            }
-
-            $("#edad").val(edad);
-        });
-
-        // ================= Calculo de edad en formulario =================
 
         const path = window.location.pathname.split("/").pop();
 
